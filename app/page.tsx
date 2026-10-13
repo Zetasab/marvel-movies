@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import type { Metadata } from "next";
 import Link from "next/link";
 
 import { CablesHero, type PosterHero } from "@/components/inicio/cables-hero";
@@ -13,9 +14,16 @@ import {
   getUltimaActualizacion,
 } from "@/lib/datos";
 import { miniatura } from "@/lib/imagenes";
+import { openGraphDe } from "@/lib/og";
 import { colorDe } from "@/lib/mapa/layout";
 import { GITHUB_PERFIL, GITHUB_REPO, NOMBRE_SITIO, URL_SITIO, jsonLd } from "@/lib/sitio";
 import { cn } from "@/lib/utils";
+
+export const metadata: Metadata = {
+  openGraph: openGraphDe({ ruta: "/", imagen: "inicio", titulo: "Todas las películas de Marvel, en orden" }),
+  // Como el openGraph, el bloque twitter de una página sustituye entero al del layout: hay que repetir la tarjeta grande
+  twitter: { card: "summary_large_image", title: "Todas las películas de Marvel, en orden" },
+};
 
 // Las cuatro películas en solitario de la Fase Uno que desembocan en The Avengers (por código de Wikidata)
 const HERO = {

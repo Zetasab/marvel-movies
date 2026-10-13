@@ -2,11 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { PaginaLegal, TablaAlmacenamiento } from "@/components/legal/pagina-legal";
+import { openGraphDe } from "@/lib/og";
 
 export const metadata: Metadata = {
   title: "Política de privacidad",
   description: "Esta web no recoge datos personales: sin formularios, sin cuentas, sin analítica y sin publicidad.",
   alternates: { canonical: "/privacidad" },
+  openGraph: openGraphDe({ ruta: "/privacidad", imagen: "inicio" }),
 };
 
 export default function PrivacidadPage() {

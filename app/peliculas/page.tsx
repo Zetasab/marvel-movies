@@ -8,15 +8,15 @@ import { Revelar } from "@/components/revelar";
 import { getPeliculasListado } from "@/lib/filas";
 import { LISTADOS } from "@/lib/listados";
 import { rutaMapa } from "@/lib/mapa/layout";
-import { metadatosImagenOg } from "@/lib/og";
-import { NOMBRE_SITIO, URL_SITIO, jsonLd } from "@/lib/sitio";
+import { openGraphDe } from "@/lib/og";
+import { URL_SITIO, jsonLd } from "@/lib/sitio";
 
 export const metadata: Metadata = {
   title: "Cómo ver las películas de Marvel en orden: cronológico o de estreno",
   description:
     "¿En qué orden ver las películas de Marvel? El MCU en orden cronológico según la línea temporal oficial, por orden de estreno, o todas las de Marvel por fecha.",
   alternates: { canonical: "/peliculas" },
-  openGraph: { url: "/peliculas", type: "website", siteName: NOMBRE_SITIO, locale: "es_ES", images: metadatosImagenOg("peliculas") },
+  openGraph: openGraphDe({ ruta: "/peliculas", imagen: "peliculas", titulo: "Cómo ver las películas de Marvel en orden: cronológico o de estreno" }),
 };
 
 export default function PeliculasPage() {

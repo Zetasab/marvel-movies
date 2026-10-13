@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Unbounded } from "next/font/google";
 
 import { Aurora } from "@/components/aurora";
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   applicationName: NOMBRE_SITIO,
   authors: [{ name: "Zetasab", url: GITHUB_PERFIL }],
   alternates: { canonical: "/" },
-  // Las páginas que definen su propio openGraph lo reemplazan entero: tienen que repetir siteName, locale e imagen
+  // Base para las páginas sin openGraph propio (p. ej. la 404). Las demás usan openGraphDe() de lib/og.tsx
   openGraph: { siteName: NOMBRE_SITIO, locale: "es_ES", type: "website", images: metadatosImagenOg("inicio") },
   // Tarjeta grande al compartir (usa las imágenes opengraph-image de cada ruta)
   twitter: { card: "summary_large_image" },
@@ -43,6 +43,9 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 } },
   ...(VERIFICACION_GOOGLE && { verification: { google: VERIFICACION_GOOGLE } }),
 };
+
+// Color de la barra del navegador en el móvil (el fondo oscuro de la web)
+export const viewport: Viewport = { themeColor: "#0d101a" };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (

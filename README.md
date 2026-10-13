@@ -133,6 +133,8 @@ marvel-movies/
 │   ├── layout.tsx                Estructura común: barra, pie, tema, botón de contacto, metadatos
 │   ├── template.tsx              Animación de entrada en cada navegación
 │   ├── robots.ts  sitemap.ts     Generados en el build
+│   ├── manifest.ts               Nombre e iconos al instalar la web (Android, escritorio)
+│   ├── favicon.ico  icon1.svg  icon2.png  apple-icon.png   Iconos de la web (de marca/icono.svg)
 │   └── globals.css               Tema (colores, cristal, brillos, animaciones)
 ├── components/
 │   ├── peliculas/                Cards, buscador, ficha lateral, botón al mapa, página de listado
@@ -150,7 +152,9 @@ marvel-movies/
 │   ├── legal.ts                  Textos legales y lista de lo que se guarda en el navegador
 │   └── sitio.ts                  URL pública, nombre, correo y enlaces de GitHub
 ├── data/                         Los datos (ver abajo)
-├── public/                       Archivos estáticos
+├── assets/                       Imágenes de fondo de cada sección (WebP ligeros)
+├── marca/                        Logo e icono en SVG y PNG (no se publican; los iconos de la web salen de aquí)
+├── public/                       Archivos estáticos (iconos del manifest)
 ├── .github/workflows/deploy.yml  Despliegue en GitHub Pages
 └── next.config.ts                Exportación estática y ruta base
 ```
@@ -261,7 +265,7 @@ La web está pensada para salir en búsquedas como *"orden cronológico marvel"*
 - **Datos estructurados (JSON-LD):** `WebSite` y `Person` en el inicio, `BreadcrumbList` en todas las páginas de contenido, y en cada listado `ItemList` de `Movie` y `FAQPage`.
 - **Preguntas frecuentes** al final de cada listado (¿cuál es la primera?, ¿cuántas hay?, ¿cuál es la última?…). Se generan a partir de los datos, así que la respuesta a "¿cuál es la última película de Marvel?" cambia sola con cada estreno.
 - **Canonical** en cada página, **sitemap.xml** y **robots.txt**.
-- **Imágenes para compartir** (Open Graph y tarjeta grande de X/Twitter), una por página, generadas en el build como PNG en `/og/*.png` ([`lib/og.tsx`](lib/og.tsx)).
+- **Vista previa al compartir** en WhatsApp, Telegram, X, Facebook, LinkedIn o Discord. Cada página tiene su título, descripción, `og:url` e imagen de 1200×630: la foto de su sección con el título encima, generada en el build como JPG en `/og/*.jpg` (unos 60–100 KB, por debajo del límite de WhatsApp). Está en [`lib/og.tsx`](lib/og.tsx) y las fotos en `assets/og/`. Para ver cómo queda: [opengraph.xyz](https://www.opengraph.xyz).
 - **Enlaces internos** entre los tres listados, el mapa, el menú y el pie.
 
 ### Lo que tienes que hacer tú (una vez)

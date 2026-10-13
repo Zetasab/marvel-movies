@@ -2,11 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { PaginaLegal, TablaAlmacenamiento } from "@/components/legal/pagina-legal";
+import { openGraphDe } from "@/lib/og";
 
 export const metadata: Metadata = {
   title: "Política de cookies",
   description: "Esta web no usa cookies. Solo guarda tus preferencias de visualización en el almacenamiento local de tu navegador.",
   alternates: { canonical: "/cookies" },
+  openGraph: openGraphDe({ ruta: "/cookies", imagen: "inicio" }),
 };
 
 export default function CookiesPage() {

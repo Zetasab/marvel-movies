@@ -8,8 +8,8 @@ import { getUltimaActualizacion } from "@/lib/datos";
 import { getPeliculasListado, type PeliculaListado } from "@/lib/filas";
 import { LISTADOS, type Listado } from "@/lib/listados";
 import { rutaMapa } from "@/lib/mapa/layout";
-import { metadatosImagenOg } from "@/lib/og";
-import { NOMBRE_SITIO, URL_SITIO, jsonLd } from "@/lib/sitio";
+import { openGraphDe } from "@/lib/og";
+import { URL_SITIO, jsonLd } from "@/lib/sitio";
 
 import { BotonMapa } from "./boton-mapa";
 import { ListaPeliculas } from "./lista-peliculas";
@@ -24,15 +24,7 @@ export function metadatosListado(listado: Listado): Metadata {
     title: titulo,
     description: descripcion,
     alternates: { canonical: listado.ruta },
-    openGraph: {
-      title: titulo,
-      description: descripcion,
-      url: listado.ruta,
-      type: "website",
-      siteName: NOMBRE_SITIO,
-      locale: "es_ES",
-      images: metadatosImagenOg(listado.ruta.split("/").at(-1)!),
-    },
+    openGraph: openGraphDe({ ruta: listado.ruta, imagen: listado.ruta.split("/").at(-1)!, titulo, descripcion }),
     twitter: { card: "summary_large_image", title: titulo, description: descripcion },
   };
 }

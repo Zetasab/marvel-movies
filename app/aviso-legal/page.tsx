@@ -3,12 +3,14 @@ import Link from "next/link";
 
 import { PaginaLegal } from "@/components/legal/pagina-legal";
 import { CONTACTO } from "@/lib/legal";
+import { openGraphDe } from "@/lib/og";
 
 export const metadata: Metadata = {
   title: "Aviso legal",
   description:
     "Proyecto personal sin ánimo de lucro y no oficial sobre las películas de Marvel. Condiciones de uso, fuentes de datos y propiedad intelectual.",
   alternates: { canonical: "/aviso-legal" },
+  openGraph: openGraphDe({ ruta: "/aviso-legal", imagen: "inicio" }),
 };
 
 export default function AvisoLegalPage() {

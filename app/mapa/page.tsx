@@ -4,15 +4,15 @@ import { MapaRelaciones } from "@/components/mapa/mapa-relaciones";
 import { getOrdenCronologico, getPeliculas, getPersonajes, getUltimaActualizacion } from "@/lib/datos";
 import { colorDe, type PeliculaMapa, type PersonajeMapa } from "@/lib/mapa/layout";
 import { formatearFecha } from "@/lib/formato";
-import { metadatosImagenOg } from "@/lib/og";
-import { NOMBRE_SITIO, URL_SITIO, jsonLd } from "@/lib/sitio";
+import { openGraphDe } from "@/lib/og";
+import { URL_SITIO, jsonLd } from "@/lib/sitio";
 
 export const metadata: Metadata = {
   title: "Mapa del multiverso Marvel: cómo se conectan las películas",
   description:
     "Mapa interactivo de las películas de Marvel unidas por sus personajes: sigue a Iron Man, Thor o Spider-Man de película en película, en orden de estreno o cronológico.",
   alternates: { canonical: "/mapa" },
-  openGraph: { url: "/mapa", type: "website", siteName: NOMBRE_SITIO, locale: "es_ES", images: metadatosImagenOg("mapa") },
+  openGraph: openGraphDe({ ruta: "/mapa", imagen: "mapa", titulo: "Mapa del multiverso Marvel: cómo se conectan las películas" }),
 };
 
 export default function MapaPage() {
