@@ -1,0 +1,57 @@
+# Publica la web en GitHub Pages en cada push a main o master (o a mano desde la pestaña Actions).
+# Requisito único: Settings → Pages → Build and deployment → Source: "GitHub Actions".
+name: Desplegar en GitHub Pages
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Un solo despliegue a la vez; si llega otro push, el que está en marcha termina igualmente
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      # Da la URL pública (https://<usuario>.github.io/<repo>) y la ruta base (/<repo>, o vacía con dominio propio)
+      - id: pages
+        uses: actions/configure-pages@v5
+
+      - run: npm ci
+
+      - name: Compilar (genera out/)
+        run: npm run build
+        env:
+          NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+          NEXT_PUBLIC_SITE_URL: ${{ steps.pages.outputs.base_url }}
+          # Opcional: Settings → Secrets and variables → Actions → Variables → GOOGLE_SITE_VERIFICATION
+          NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION: ${{ vars.GOOGLE_SITE_VERIFICATION }}
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

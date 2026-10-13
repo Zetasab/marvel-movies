@@ -1,0 +1,2955 @@
+{
+  "total": 215,
+  "personajes": [
+    {
+      "id": "capitan-america",
+      "nombre": "Capitán América",
+      "principal": true,
+      "wikidata": [
+        "Q24022098",
+        "Q190679"
+      ],
+      "peliculas": [
+        "capitan-america-1979",
+        "capitan-america-1990",
+        "ultimate-avengers-2006",
+        "capitan-america-el-primer-vengador-2011",
+        "the-avengers-2012",
+        "thor-the-dark-world-2013",
+        "iron-man-captain-america-heroes-united-2014",
+        "captain-america-the-winter-soldier-2014",
+        "avengers-age-of-ultron-2015",
+        "ant-man-2015",
+        "captain-america-civil-war-2016",
+        "spider-man-homecoming-2017",
+        "avengers-infinity-war-2018",
+        "capitana-marvel-2019",
+        "vengadores-endgame-2019",
+        "captain-america-brave-new-world-2025",
+        "avengers-the-kang-dynasty-2026"
+      ]
+    },
+    {
+      "id": "nick-fury",
+      "nombre": "Nick Fury",
+      "principal": true,
+      "wikidata": [
+        "Q23900377",
+        "Q975100"
+      ],
+      "peliculas": [
+        "nick-fury-agent-of-s-h-i-e-l-d-1998",
+        "ultimate-avengers-2006",
+        "iron-man-2008",
+        "iron-man-2-2010",
+        "thor-2011",
+        "capitan-america-el-primer-vengador-2011",
+        "the-avengers-2012",
+        "captain-america-the-winter-soldier-2014",
+        "avengers-age-of-ultron-2015",
+        "avengers-infinity-war-2018",
+        "capitana-marvel-2019",
+        "vengadores-endgame-2019",
+        "spider-man-far-from-home-2019",
+        "the-marvels-2023"
+      ]
+    },
+    {
+      "id": "hulk",
+      "nombre": "Hulk",
+      "principal": true,
+      "wikidata": [
+        "Q24050117",
+        "Q188760"
+      ],
+      "peliculas": [
+        "ultimate-avengers-2006",
+        "the-incredible-hulk-2008",
+        "the-avengers-2012",
+        "iron-man-3-2013",
+        "iron-man-hulk-heroes-united-2013",
+        "iron-man-captain-america-heroes-united-2014",
+        "avengers-age-of-ultron-2015",
+        "thor-ragnarok-2017",
+        "avengers-infinity-war-2018",
+        "capitana-marvel-2019",
+        "vengadores-endgame-2019",
+        "shang-chi-and-the-legend-of-the-ten-rings-2021",
+        "spider-man-brand-new-day-2026"
+      ]
+    },
+    {
+      "id": "iron-man",
+      "nombre": "Iron Man",
+      "principal": true,
+      "wikidata": [
+        "Q23894967",
+        "Q180704"
+      ],
+      "peliculas": [
+        "ultimate-avengers-2006",
+        "iron-man-2008",
+        "the-incredible-hulk-2008",
+        "iron-man-2-2010",
+        "the-avengers-2012",
+        "iron-man-3-2013",
+        "iron-man-hulk-heroes-united-2013",
+        "iron-man-captain-america-heroes-united-2014",
+        "avengers-age-of-ultron-2015",
+        "captain-america-civil-war-2016",
+        "spider-man-homecoming-2017",
+        "avengers-infinity-war-2018",
+        "vengadores-endgame-2019"
+      ]
+    },
+    {
+      "id": "spider-man",
+      "nombre": "Spider-Man",
+      "principal": true,
+      "wikidata": [
+        "Q79037",
+        "Q23991129",
+        "Q60464931",
+        "Q98454793"
+      ],
+      "peliculas": [
+        "spider-man-2002",
+        "spider-man-2-2004",
+        "spider-man-3-2007",
+        "the-amazing-spider-man-2012",
+        "the-amazing-spider-man-2-rise-of-electro-2014",
+        "captain-america-civil-war-2016",
+        "spider-man-homecoming-2017",
+        "avengers-infinity-war-2018",
+        "spider-man-un-nuevo-universo-2018",
+        "vengadores-endgame-2019",
+        "spider-man-far-from-home-2019",
+        "spider-man-sin-camino-a-casa-2021",
+        "spider-man-brand-new-day-2026"
+      ]
+    },
+    {
+      "id": "profesor-x",
+      "nombre": "Profesor X",
+      "principal": true,
+      "wikidata": [
+        "Q105350971"
+      ],
+      "peliculas": [
+        "x-men-2000",
+        "x-men-2-2003",
+        "x-men-the-last-stand-2006",
+        "x-men-origins-wolverine-2009",
+        "x-men-primera-generacion-2011",
+        "the-wolverine-2013",
+        "x-men-dias-del-futuro-pasado-2014",
+        "x-men-apocalipsis-2016",
+        "logan-2017",
+        "deadpool-2-2018",
+        "x-men-dark-phoenix-2019",
+        "doctor-strange-en-el-multiverso-de-la-locura-2022"
+      ]
+    },
+    {
+      "id": "wolverine",
+      "nombre": "Lobezno",
+      "principal": true,
+      "wikidata": [
+        "Q97275436",
+        "Q186422"
+      ],
+      "peliculas": [
+        "x-men-2000",
+        "x-men-2-2003",
+        "x-men-the-last-stand-2006",
+        "x-men-origins-wolverine-2009",
+        "x-men-primera-generacion-2011",
+        "the-wolverine-2013",
+        "x-men-dias-del-futuro-pasado-2014",
+        "x-men-apocalipsis-2016",
+        "logan-2017",
+        "deadpool-wolverine-2024"
+      ]
+    },
+    {
+      "id": "soldado-de-invierno",
+      "nombre": "Soldado de Invierno",
+      "principal": true,
+      "wikidata": [
+        "Q23991694"
+      ],
+      "peliculas": [
+        "capitan-america-el-primer-vengador-2011",
+        "captain-america-the-winter-soldier-2014",
+        "ant-man-2015",
+        "captain-america-civil-war-2016",
+        "black-panther-2018",
+        "avengers-infinity-war-2018",
+        "vengadores-endgame-2019",
+        "captain-america-brave-new-world-2025",
+        "thunderbolts-2025",
+        "avengers-the-kang-dynasty-2026"
+      ]
+    },
+    {
+      "id": "thor",
+      "nombre": "Thor",
+      "principal": true,
+      "wikidata": [
+        "Q24046102"
+      ],
+      "peliculas": [
+        "thor-2011",
+        "the-avengers-2012",
+        "thor-the-dark-world-2013",
+        "avengers-age-of-ultron-2015",
+        "doctor-strange-2016",
+        "thor-ragnarok-2017",
+        "avengers-infinity-war-2018",
+        "vengadores-endgame-2019",
+        "thor-love-and-thunder-2022",
+        "avengers-the-kang-dynasty-2026"
+      ]
+    },
+    {
+      "id": "maquina-de-guerra",
+      "nombre": "Máquina de Guerra",
+      "principal": true,
+      "wikidata": [
+        "Q23895040",
+        "Q616337"
+      ],
+      "peliculas": [
+        "iron-man-2008",
+        "iron-man-2-2010",
+        "the-avengers-2012",
+        "iron-man-3-2013",
+        "avengers-age-of-ultron-2015",
+        "captain-america-civil-war-2016",
+        "avengers-infinity-war-2018",
+        "capitana-marvel-2019",
+        "vengadores-endgame-2019"
+      ]
+    },
+    {
+      "id": "viuda-negra",
+      "nombre": "Viuda Negra",
+      "principal": true,
+      "wikidata": [
+        "Q23895063"
+      ],
+      "peliculas": [
+        "iron-man-2-2010",
+        "the-avengers-2012",
+        "captain-america-the-winter-soldier-2014",
+        "avengers-age-of-ultron-2015",
+        "captain-america-civil-war-2016",
+        "avengers-infinity-war-2018",
+        "capitana-marvel-2019",
+        "vengadores-endgame-2019",
+        "black-widow-2021"
+      ]
+    },
+    {
+      "id": "falcon",
+      "nombre": "Falcon (Sam Wilson)",
+      "principal": true,
+      "wikidata": [
+        "Q24022345"
+      ],
+      "peliculas": [
+        "captain-america-the-winter-soldier-2014",
+        "avengers-age-of-ultron-2015",
+        "ant-man-2015",
+        "captain-america-civil-war-2016",
+        "avengers-infinity-war-2018",
+        "vengadores-endgame-2019",
+        "captain-america-brave-new-world-2025",
+        "avengers-the-kang-dynasty-2026"
+      ]
+    },
+    {
+      "id": "magneto",
+      "nombre": "Magneto",
+      "principal": true,
+      "wikidata": [
+        "Q105424624"
+      ],
+      "peliculas": [
+        "x-men-2000",
+        "x-men-2-2003",
+        "x-men-the-last-stand-2006",
+        "x-men-primera-generacion-2011",
+        "the-wolverine-2013",
+        "x-men-dias-del-futuro-pasado-2014",
+        "x-men-apocalipsis-2016",
+        "x-men-dark-phoenix-2019"
+      ]
+    },
+    {
+      "id": "doctor-strange",
+      "nombre": "Doctor Strange",
+      "principal": true,
+      "wikidata": [
+        "Q24034722",
+        "Q907767"
+      ],
+      "peliculas": [
+        "doctor-strange-the-sorcerer-supreme-2007",
+        "doctor-strange-2016",
+        "thor-ragnarok-2017",
+        "avengers-infinity-war-2018",
+        "vengadores-endgame-2019",
+        "spider-man-sin-camino-a-casa-2021",
+        "doctor-strange-en-el-multiverso-de-la-locura-2022"
+      ]
+    },
+    {
+      "id": "loki",
+      "nombre": "Loki",
+      "principal": true,
+      "wikidata": [
+        "Q24046118"
+      ],
+      "peliculas": [
+        "thor-2011",
+        "the-avengers-2012",
+        "thor-the-dark-world-2013",
+        "thor-ragnarok-2017",
+        "avengers-infinity-war-2018",
+        "vengadores-endgame-2019",
+        "avengers-the-kang-dynasty-2026"
+      ]
+    },
+    {
+      "id": "ant-man",
+      "nombre": "Ant-Man",
+      "principal": true,
+      "wikidata": [
+        "Q24026703"
+      ],
+      "peliculas": [
+        "ant-man-2015",
+        "captain-america-civil-war-2016",
+        "ant-man-and-the-wasp-2018",
+        "vengadores-endgame-2019",
+        "ant-man-and-the-wasp-quantumania-2023",
+        "avengers-the-kang-dynasty-2026"
+      ]
+    },
+    {
+      "id": "bruja-escarlata",
+      "nombre": "Bruja Escarlata",
+      "principal": true,
+      "wikidata": [
+        "Q24022542"
+      ],
+      "peliculas": [
+        "captain-america-the-winter-soldier-2014",
+        "avengers-age-of-ultron-2015",
+        "captain-america-civil-war-2016",
+        "avengers-infinity-war-2018",
+        "vengadores-endgame-2019",
+        "doctor-strange-en-el-multiverso-de-la-locura-2022"
+      ]
+    },
+    {
+      "id": "star-lord",
+      "nombre": "Star-Lord",
+      "principal": true,
+      "wikidata": [
+        "Q24050065"
+      ],
+      "peliculas": [
+        "guardianes-de-la-galaxia-2014",
+        "guardianes-de-la-galaxia-vol-2-2017",
+        "avengers-infinity-war-2018",
+        "vengadores-endgame-2019",
+        "thor-love-and-thunder-2022",
+        "guardianes-de-la-galaxia-vol-3-2023"
+      ]
+    },
+    {
+      "id": "ojo-de-halcon",
+      "nombre": "Ojo de Halcón",
+      "principal": true,
+      "wikidata": [
+        "Q24026688"
+      ],
+      "peliculas": [
+        "thor-2011",
+        "the-avengers-2012",
+        "avengers-age-of-ultron-2015",
+        "captain-america-civil-war-2016",
+        "vengadores-endgame-2019"
+      ]
+    },
+    {
+      "id": "thanos",
+      "nombre": "Thanos",
+      "principal": true,
+      "wikidata": [
+        "Q64825451"
+      ],
+      "peliculas": [
+        "the-avengers-2012",
+        "guardianes-de-la-galaxia-2014",
+        "avengers-age-of-ultron-2015",
+        "avengers-infinity-war-2018",
+        "vengadores-endgame-2019"
+      ]
+    },
+    {
+      "id": "avispa",
+      "nombre": "Avispa",
+      "principal": true,
+      "wikidata": [
+        "Q24050133"
+      ],
+      "peliculas": [
+        "ant-man-2015",
+        "ant-man-and-the-wasp-2018",
+        "vengadores-endgame-2019",
+        "ant-man-and-the-wasp-quantumania-2023"
+      ]
+    },
+    {
+      "id": "black-panther",
+      "nombre": "Black Panther",
+      "principal": true,
+      "wikidata": [
+        "Q24004885"
+      ],
+      "peliculas": [
+        "captain-america-civil-war-2016",
+        "black-panther-2018",
+        "avengers-infinity-war-2018",
+        "vengadores-endgame-2019"
+      ]
+    },
+    {
+      "id": "capitana-marvel",
+      "nombre": "Capitana Marvel",
+      "principal": true,
+      "wikidata": [
+        "Q64658380"
+      ],
+      "peliculas": [
+        "capitana-marvel-2019",
+        "vengadores-endgame-2019",
+        "shang-chi-and-the-legend-of-the-ten-rings-2021",
+        "the-marvels-2023"
+      ]
+    },
+    {
+      "id": "deadpool",
+      "nombre": "Deadpool",
+      "principal": true,
+      "wikidata": [
+        "Q113485245",
+        "Q1631090"
+      ],
+      "peliculas": [
+        "x-men-origins-wolverine-2009",
+        "deadpool-2016",
+        "deadpool-2-2018",
+        "deadpool-wolverine-2024"
+      ]
+    },
+    {
+      "id": "blade",
+      "nombre": "Blade",
+      "principal": true,
+      "wikidata": [
+        "Q110633875"
+      ],
+      "peliculas": [
+        "blade-1998",
+        "blade-ii-2002",
+        "blade-trinity-2004"
+      ]
+    },
+    {
+      "id": "mister-fantastico",
+      "nombre": "Mister Fantástico",
+      "principal": true,
+      "wikidata": [
+        "Q125179103"
+      ],
+      "peliculas": [
+        "doctor-strange-en-el-multiverso-de-la-locura-2022",
+        "the-fantastic-four-2025",
+        "avengers-the-kang-dynasty-2026"
+      ]
+    },
+    {
+      "id": "venom",
+      "nombre": "Venom",
+      "principal": true,
+      "wikidata": [
+        "Q108923148"
+      ],
+      "peliculas": [
+        "venom-2018",
+        "venom-carnage-liberado-2021",
+        "venom-el-ultimo-baile-2024"
+      ]
+    },
+    {
+      "id": "vision",
+      "nombre": "Visión",
+      "principal": true,
+      "wikidata": [
+        "Q24022584"
+      ],
+      "peliculas": [
+        "avengers-age-of-ultron-2015",
+        "captain-america-civil-war-2016",
+        "avengers-infinity-war-2018"
+      ]
+    },
+    {
+      "id": "ghost-rider",
+      "nombre": "Ghost Rider",
+      "principal": true,
+      "wikidata": [
+        "Q113135595"
+      ],
+      "peliculas": [
+        "ghost-rider-2007",
+        "ghost-rider-espiritu-de-venganza-2011"
+      ]
+    },
+    {
+      "id": "punisher",
+      "nombre": "Punisher",
+      "principal": true,
+      "wikidata": [
+        "Q729150"
+      ],
+      "peliculas": [
+        "the-punisher-1989",
+        "el-castigador-zona-de-guerra-2008"
+      ]
+    },
+    {
+      "id": "tia-may",
+      "nombre": "Tía May",
+      "principal": false,
+      "wikidata": [
+        "Q23991271",
+        "Q2453332"
+      ],
+      "peliculas": [
+        "spider-man-2002",
+        "spider-man-2-2004",
+        "spider-man-3-2007",
+        "the-amazing-spider-man-2012",
+        "the-amazing-spider-man-2-rise-of-electro-2014",
+        "captain-america-civil-war-2016",
+        "spider-man-homecoming-2017",
+        "vengadores-endgame-2019",
+        "spider-man-far-from-home-2019",
+        "spider-man-sin-camino-a-casa-2021",
+        "spider-man-brand-new-day-2026"
+      ]
+    },
+    {
+      "id": "ciclope",
+      "nombre": "Cíclope",
+      "principal": false,
+      "wikidata": [
+        "Q857921"
+      ],
+      "peliculas": [
+        "x-men-2000",
+        "x-men-2-2003",
+        "x-men-the-last-stand-2006",
+        "x-men-origins-wolverine-2009",
+        "x-men-dias-del-futuro-pasado-2014",
+        "x-men-apocalipsis-2016",
+        "deadpool-2-2018",
+        "x-men-dark-phoenix-2019"
+      ]
+    },
+    {
+      "id": "happy-hogan",
+      "nombre": "Happy Hogan",
+      "principal": false,
+      "wikidata": [
+        "Q23900470"
+      ],
+      "peliculas": [
+        "iron-man-2008",
+        "iron-man-2-2010",
+        "iron-man-3-2013",
+        "spider-man-homecoming-2017",
+        "vengadores-endgame-2019",
+        "spider-man-far-from-home-2019",
+        "spider-man-sin-camino-a-casa-2021",
+        "deadpool-wolverine-2024"
+      ]
+    },
+    {
+      "id": "pepper-potts",
+      "nombre": "Pepper Potts",
+      "principal": false,
+      "wikidata": [
+        "Q23895000"
+      ],
+      "peliculas": [
+        "iron-man-2008",
+        "iron-man-2-2010",
+        "the-avengers-2012",
+        "iron-man-3-2013",
+        "captain-america-civil-war-2016",
+        "spider-man-homecoming-2017",
+        "avengers-infinity-war-2018",
+        "vengadores-endgame-2019"
+      ]
+    },
+    {
+      "id": "bestia",
+      "nombre": "Bestia",
+      "principal": false,
+      "wikidata": [
+        "Q302186"
+      ],
+      "peliculas": [
+        "x-men-2-2003",
+        "x-men-the-last-stand-2006",
+        "x-men-primera-generacion-2011",
+        "x-men-dias-del-futuro-pasado-2014",
+        "x-men-apocalipsis-2016",
+        "deadpool-2-2018",
+        "x-men-dark-phoenix-2019"
+      ]
+    },
+    {
+      "id": "jean-grey",
+      "nombre": "Jean Grey",
+      "principal": false,
+      "wikidata": [
+        "Q108366195"
+      ],
+      "peliculas": [
+        "x-men-2000",
+        "x-men-2-2003",
+        "x-men-the-last-stand-2006",
+        "the-wolverine-2013",
+        "x-men-dias-del-futuro-pasado-2014",
+        "x-men-apocalipsis-2016",
+        "x-men-dark-phoenix-2019"
+      ]
+    },
+    {
+      "id": "mistica",
+      "nombre": "Mística",
+      "principal": false,
+      "wikidata": [
+        "Q116987109"
+      ],
+      "peliculas": [
+        "x-men-2000",
+        "x-men-2-2003",
+        "x-men-the-last-stand-2006",
+        "x-men-primera-generacion-2011",
+        "x-men-dias-del-futuro-pasado-2014",
+        "x-men-apocalipsis-2016",
+        "x-men-dark-phoenix-2019"
+      ]
+    },
+    {
+      "id": "tormenta",
+      "nombre": "Tormenta",
+      "principal": false,
+      "wikidata": [
+        "Q125179131"
+      ],
+      "peliculas": [
+        "x-men-2000",
+        "x-men-2-2003",
+        "x-men-the-last-stand-2006",
+        "x-men-dias-del-futuro-pasado-2014",
+        "x-men-apocalipsis-2016",
+        "deadpool-2-2018",
+        "x-men-dark-phoenix-2019"
+      ]
+    },
+    {
+      "id": "coloso",
+      "nombre": "Coloso",
+      "principal": false,
+      "wikidata": [
+        "Q60002"
+      ],
+      "peliculas": [
+        "x-men-2-2003",
+        "x-men-the-last-stand-2006",
+        "x-men-dias-del-futuro-pasado-2014",
+        "deadpool-2016",
+        "deadpool-2-2018",
+        "deadpool-wolverine-2024"
+      ]
+    },
+    {
+      "id": "drax",
+      "nombre": "Drax",
+      "principal": false,
+      "wikidata": [
+        "Q24050079"
+      ],
+      "peliculas": [
+        "guardianes-de-la-galaxia-2014",
+        "guardianes-de-la-galaxia-vol-2-2017",
+        "avengers-infinity-war-2018",
+        "vengadores-endgame-2019",
+        "thor-love-and-thunder-2022",
+        "guardianes-de-la-galaxia-vol-3-2023"
+      ]
+    },
+    {
+      "id": "heimdall",
+      "nombre": "Heimdall",
+      "principal": false,
+      "wikidata": [
+        "Q24046150"
+      ],
+      "peliculas": [
+        "thor-2011",
+        "thor-the-dark-world-2013",
+        "avengers-age-of-ultron-2015",
+        "thor-ragnarok-2017",
+        "avengers-infinity-war-2018",
+        "thor-love-and-thunder-2022"
+      ]
+    },
+    {
+      "id": "howard-stark",
+      "nombre": "Howard Stark",
+      "principal": false,
+      "wikidata": [
+        "Q23900446"
+      ],
+      "peliculas": [
+        "iron-man-2008",
+        "iron-man-2-2010",
+        "capitan-america-el-primer-vengador-2011",
+        "ant-man-2015",
+        "captain-america-civil-war-2016",
+        "vengadores-endgame-2019"
+      ]
+    },
+    {
+      "id": "maria-hill",
+      "nombre": "Maria Hill",
+      "principal": false,
+      "wikidata": [
+        "Q60485274"
+      ],
+      "peliculas": [
+        "the-avengers-2012",
+        "captain-america-the-winter-soldier-2014",
+        "avengers-age-of-ultron-2015",
+        "avengers-infinity-war-2018",
+        "vengadores-endgame-2019",
+        "spider-man-far-from-home-2019"
+      ]
+    },
+    {
+      "id": "nebula",
+      "nombre": "Nebula",
+      "principal": false,
+      "wikidata": [
+        "Q24050097"
+      ],
+      "peliculas": [
+        "guardianes-de-la-galaxia-2014",
+        "guardianes-de-la-galaxia-vol-2-2017",
+        "avengers-infinity-war-2018",
+        "vengadores-endgame-2019",
+        "thor-love-and-thunder-2022",
+        "guardianes-de-la-galaxia-vol-3-2023"
+      ]
+    },
+    {
+      "id": "ned-leeds",
+      "nombre": "Ned Leeds",
+      "principal": false,
+      "wikidata": [
+        "Q29053559"
+      ],
+      "peliculas": [
+        "spider-man-homecoming-2017",
+        "avengers-infinity-war-2018",
+        "vengadores-endgame-2019",
+        "spider-man-far-from-home-2019",
+        "spider-man-sin-camino-a-casa-2021",
+        "spider-man-brand-new-day-2026"
+      ]
+    },
+    {
+      "id": "peggy-carter",
+      "nombre": "Peggy Carter",
+      "principal": false,
+      "wikidata": [
+        "Q24034679"
+      ],
+      "peliculas": [
+        "capitan-america-el-primer-vengador-2011",
+        "captain-america-the-winter-soldier-2014",
+        "avengers-age-of-ultron-2015",
+        "ant-man-2015",
+        "vengadores-endgame-2019",
+        "doctor-strange-en-el-multiverso-de-la-locura-2022"
+      ]
+    },
+    {
+      "id": "rocket",
+      "nombre": "Rocket",
+      "principal": false,
+      "wikidata": [
+        "Q24050088"
+      ],
+      "peliculas": [
+        "guardianes-de-la-galaxia-2014",
+        "guardianes-de-la-galaxia-vol-2-2017",
+        "avengers-infinity-war-2018",
+        "vengadores-endgame-2019",
+        "thor-love-and-thunder-2022",
+        "guardianes-de-la-galaxia-vol-3-2023"
+      ]
+    },
+    {
+      "id": "thaddeus-ross",
+      "nombre": "Thaddeus Ross",
+      "principal": false,
+      "wikidata": [
+        "Q24027376"
+      ],
+      "peliculas": [
+        "the-incredible-hulk-2008",
+        "captain-america-civil-war-2016",
+        "avengers-infinity-war-2018",
+        "vengadores-endgame-2019",
+        "black-widow-2021",
+        "captain-america-brave-new-world-2025"
+      ]
+    },
+    {
+      "id": "tio-ben",
+      "nombre": "Tío Ben",
+      "principal": false,
+      "wikidata": [
+        "Q2299139"
+      ],
+      "peliculas": [
+        "spider-man-2002",
+        "spider-man-2-2004",
+        "spider-man-3-2007",
+        "the-amazing-spider-man-2012",
+        "the-amazing-spider-man-2-rise-of-electro-2014",
+        "madame-web-2024"
+      ]
+    },
+    {
+      "id": "wong",
+      "nombre": "Wong",
+      "principal": false,
+      "wikidata": [
+        "Q24045752"
+      ],
+      "peliculas": [
+        "doctor-strange-2016",
+        "avengers-infinity-war-2018",
+        "vengadores-endgame-2019",
+        "shang-chi-and-the-legend-of-the-ten-rings-2021",
+        "spider-man-sin-camino-a-casa-2021",
+        "doctor-strange-en-el-multiverso-de-la-locura-2022"
+      ]
+    },
+    {
+      "id": "cassie-lang",
+      "nombre": "Cassie Lang",
+      "principal": false,
+      "wikidata": [
+        "Q27057203"
+      ],
+      "peliculas": [
+        "ant-man-2015",
+        "ant-man-and-the-wasp-2018",
+        "vengadores-endgame-2019",
+        "ant-man-and-the-wasp-quantumania-2023",
+        "avengers-the-kang-dynasty-2026"
+      ]
+    },
+    {
+      "id": "duende-verde",
+      "nombre": "Duende Verde",
+      "principal": false,
+      "wikidata": [
+        "Q63728971",
+        "Q735721",
+        "Q17090877"
+      ],
+      "peliculas": [
+        "spider-man-2002",
+        "spider-man-2-2004",
+        "spider-man-3-2007",
+        "the-amazing-spider-man-2-rise-of-electro-2014",
+        "spider-man-sin-camino-a-casa-2021"
+      ]
+    },
+    {
+      "id": "erik-selvig",
+      "nombre": "Erik Selvig",
+      "principal": false,
+      "wikidata": [
+        "Q4135325"
+      ],
+      "peliculas": [
+        "thor-2011",
+        "the-avengers-2012",
+        "thor-the-dark-world-2013",
+        "avengers-age-of-ultron-2015",
+        "thor-love-and-thunder-2022"
+      ]
+    },
+    {
+      "id": "gamora",
+      "nombre": "Gamora",
+      "principal": false,
+      "wikidata": [
+        "Q24050072"
+      ],
+      "peliculas": [
+        "guardianes-de-la-galaxia-2014",
+        "guardianes-de-la-galaxia-vol-2-2017",
+        "avengers-infinity-war-2018",
+        "vengadores-endgame-2019",
+        "guardianes-de-la-galaxia-vol-3-2023"
+      ]
+    },
+    {
+      "id": "groot",
+      "nombre": "Groot",
+      "principal": false,
+      "wikidata": [
+        "Q24050083"
+      ],
+      "peliculas": [
+        "guardianes-de-la-galaxia-2014",
+        "avengers-infinity-war-2018",
+        "vengadores-endgame-2019",
+        "thor-love-and-thunder-2022",
+        "guardianes-de-la-galaxia-vol-3-2023"
+      ]
+    },
+    {
+      "id": "kraglin",
+      "nombre": "Kraglin",
+      "principal": false,
+      "wikidata": [
+        "Q29842885"
+      ],
+      "peliculas": [
+        "guardianes-de-la-galaxia-2014",
+        "guardianes-de-la-galaxia-vol-2-2017",
+        "vengadores-endgame-2019",
+        "thor-love-and-thunder-2022",
+        "guardianes-de-la-galaxia-vol-3-2023"
+      ]
+    },
+    {
+      "id": "m-baku",
+      "nombre": "M'Baku",
+      "principal": false,
+      "wikidata": [
+        "Q27045831"
+      ],
+      "peliculas": [
+        "black-panther-2018",
+        "avengers-infinity-war-2018",
+        "vengadores-endgame-2019",
+        "black-panther-ii-wakanda-forever-2022",
+        "avengers-the-kang-dynasty-2026"
+      ]
+    },
+    {
+      "id": "mantis",
+      "nombre": "Mantis",
+      "principal": false,
+      "wikidata": [
+        "Q24050108"
+      ],
+      "peliculas": [
+        "guardianes-de-la-galaxia-vol-2-2017",
+        "avengers-infinity-war-2018",
+        "vengadores-endgame-2019",
+        "thor-love-and-thunder-2022",
+        "guardianes-de-la-galaxia-vol-3-2023"
+      ]
+    },
+    {
+      "id": "phil-coulson",
+      "nombre": "Phil Coulson",
+      "principal": false,
+      "wikidata": [
+        "Q1369292"
+      ],
+      "peliculas": [
+        "iron-man-2008",
+        "iron-man-2-2010",
+        "thor-2011",
+        "the-avengers-2012",
+        "capitana-marvel-2019"
+      ]
+    },
+    {
+      "id": "shuri",
+      "nombre": "Shuri",
+      "principal": false,
+      "wikidata": [
+        "Q29051978"
+      ],
+      "peliculas": [
+        "black-panther-2018",
+        "avengers-infinity-war-2018",
+        "vengadores-endgame-2019",
+        "black-panther-ii-wakanda-forever-2022",
+        "avengers-the-kang-dynasty-2026"
+      ]
+    },
+    {
+      "id": "ayo",
+      "nombre": "Ayo",
+      "principal": false,
+      "wikidata": [
+        "Q26758863"
+      ],
+      "peliculas": [
+        "captain-america-civil-war-2016",
+        "black-panther-2018",
+        "avengers-infinity-war-2018",
+        "black-panther-ii-wakanda-forever-2022"
+      ]
+    },
+    {
+      "id": "hank-pym",
+      "nombre": "Hank Pym",
+      "principal": false,
+      "wikidata": [
+        "Q24265423"
+      ],
+      "peliculas": [
+        "ant-man-2015",
+        "ant-man-and-the-wasp-2018",
+        "vengadores-endgame-2019",
+        "ant-man-and-the-wasp-quantumania-2023"
+      ]
+    },
+    {
+      "id": "hombre-de-hielo",
+      "nombre": "Hombre de Hielo",
+      "principal": false,
+      "wikidata": [
+        "Q838088"
+      ],
+      "peliculas": [
+        "x-men-2000",
+        "x-men-2-2003",
+        "x-men-the-last-stand-2006",
+        "x-men-dias-del-futuro-pasado-2014"
+      ]
+    },
+    {
+      "id": "jane-foster",
+      "nombre": "Jane Foster",
+      "principal": false,
+      "wikidata": [
+        "Q24046106"
+      ],
+      "peliculas": [
+        "thor-2011",
+        "thor-the-dark-world-2013",
+        "vengadores-endgame-2019",
+        "thor-love-and-thunder-2022"
+      ]
+    },
+    {
+      "id": "janet-van-dyne",
+      "nombre": "Janet van Dyne",
+      "principal": false,
+      "wikidata": [
+        "Q27067914"
+      ],
+      "peliculas": [
+        "ant-man-2015",
+        "ant-man-and-the-wasp-2018",
+        "vengadores-endgame-2019",
+        "ant-man-and-the-wasp-quantumania-2023"
+      ]
+    },
+    {
+      "id": "jasper-sitwell",
+      "nombre": "Jasper Sitwell",
+      "principal": false,
+      "wikidata": [
+        "Q24083294"
+      ],
+      "peliculas": [
+        "thor-2011",
+        "the-avengers-2012",
+        "captain-america-the-winter-soldier-2014",
+        "vengadores-endgame-2019"
+      ]
+    },
+    {
+      "id": "kitty-pryde",
+      "nombre": "Kitty Pryde",
+      "principal": false,
+      "wikidata": [
+        "Q547306"
+      ],
+      "peliculas": [
+        "x-men-2000",
+        "x-men-2-2003",
+        "x-men-the-last-stand-2006",
+        "x-men-dias-del-futuro-pasado-2014"
+      ]
+    },
+    {
+      "id": "mary-jane",
+      "nombre": "Mary Jane Watson",
+      "principal": false,
+      "wikidata": [
+        "Q63729056",
+        "Q27810"
+      ],
+      "peliculas": [
+        "spider-man-2002",
+        "spider-man-2-2004",
+        "spider-man-3-2007",
+        "the-amazing-spider-man-2-rise-of-electro-2014"
+      ]
+    },
+    {
+      "id": "michelle-jones",
+      "nombre": "Michelle Jones",
+      "principal": false,
+      "wikidata": [
+        "Q23894605"
+      ],
+      "peliculas": [
+        "spider-man-homecoming-2017",
+        "spider-man-far-from-home-2019",
+        "spider-man-sin-camino-a-casa-2021",
+        "spider-man-brand-new-day-2026"
+      ]
+    },
+    {
+      "id": "okoye",
+      "nombre": "Okoye",
+      "principal": false,
+      "wikidata": [
+        "Q53417307"
+      ],
+      "peliculas": [
+        "black-panther-2018",
+        "avengers-infinity-war-2018",
+        "vengadores-endgame-2019",
+        "black-panther-ii-wakanda-forever-2022"
+      ]
+    },
+    {
+      "id": "peter-maximoff",
+      "nombre": "Peter Maximoff",
+      "principal": false,
+      "wikidata": [
+        "Q105697028"
+      ],
+      "peliculas": [
+        "x-men-dias-del-futuro-pasado-2014",
+        "x-men-apocalipsis-2016",
+        "deadpool-2-2018",
+        "x-men-dark-phoenix-2019"
+      ]
+    },
+    {
+      "id": "rogue",
+      "nombre": "Rogue",
+      "principal": false,
+      "wikidata": [
+        "Q838097"
+      ],
+      "peliculas": [
+        "x-men-2000",
+        "x-men-2-2003",
+        "x-men-the-last-stand-2006",
+        "x-men-dias-del-futuro-pasado-2014"
+      ]
+    },
+    {
+      "id": "rondador-nocturno",
+      "nombre": "Rondador Nocturno",
+      "principal": false,
+      "wikidata": [
+        "Q5342183"
+      ],
+      "peliculas": [
+        "x-men-2-2003",
+        "x-men-apocalipsis-2016",
+        "deadpool-2-2018",
+        "x-men-dark-phoenix-2019"
+      ]
+    },
+    {
+      "id": "william-stryker",
+      "nombre": "William Stryker",
+      "principal": false,
+      "wikidata": [
+        "Q2551564"
+      ],
+      "peliculas": [
+        "x-men-2-2003",
+        "x-men-origins-wolverine-2009",
+        "x-men-dias-del-futuro-pasado-2014",
+        "x-men-apocalipsis-2016"
+      ]
+    },
+    {
+      "id": "abraham-whistler",
+      "nombre": "Abraham Whistler",
+      "principal": false,
+      "wikidata": [
+        "Q1137153"
+      ],
+      "peliculas": [
+        "blade-1998",
+        "blade-ii-2002",
+        "blade-trinity-2004"
+      ]
+    },
+    {
+      "id": "alexei-shostakov",
+      "nombre": "Alexei Shostakov",
+      "principal": false,
+      "wikidata": [
+        "Q65935848"
+      ],
+      "peliculas": [
+        "black-widow-2021",
+        "thunderbolts-2025",
+        "avengers-the-kang-dynasty-2026"
+      ]
+    },
+    {
+      "id": "ava-starr",
+      "nombre": "Ava Starr",
+      "principal": false,
+      "wikidata": [
+        "Q66133368"
+      ],
+      "peliculas": [
+        "ant-man-and-the-wasp-2018",
+        "thunderbolts-2025",
+        "avengers-the-kang-dynasty-2026"
+      ]
+    },
+    {
+      "id": "betty-brant",
+      "nombre": "Betty Brant",
+      "principal": false,
+      "wikidata": [
+        "Q2628255"
+      ],
+      "peliculas": [
+        "spider-man-2002",
+        "spider-man-2-2004",
+        "spider-man-3-2007"
+      ]
+    },
+    {
+      "id": "betty-brant-q65935876",
+      "nombre": "Betty Brant",
+      "principal": false,
+      "wikidata": [
+        "Q65935876"
+      ],
+      "peliculas": [
+        "spider-man-homecoming-2017",
+        "spider-man-far-from-home-2019",
+        "spider-man-sin-camino-a-casa-2021"
+      ]
+    },
+    {
+      "id": "blind-al",
+      "nombre": "Blind Al",
+      "principal": false,
+      "wikidata": [
+        "Q3640940"
+      ],
+      "peliculas": [
+        "deadpool-2016",
+        "deadpool-2-2018",
+        "deadpool-wolverine-2024"
+      ]
+    },
+    {
+      "id": "brock-rumlow-crossbones",
+      "nombre": "Brock Rumlow / Crossbones",
+      "principal": false,
+      "wikidata": [
+        "Q24040742"
+      ],
+      "peliculas": [
+        "captain-america-the-winter-soldier-2014",
+        "captain-america-civil-war-2016",
+        "vengadores-endgame-2019"
+      ]
+    },
+    {
+      "id": "copycat",
+      "nombre": "Copycat",
+      "principal": false,
+      "wikidata": [
+        "Q2916404"
+      ],
+      "peliculas": [
+        "deadpool-2016",
+        "deadpool-2-2018",
+        "deadpool-wolverine-2024"
+      ]
+    },
+    {
+      "id": "curt-connors",
+      "nombre": "Curt Connors",
+      "principal": false,
+      "wikidata": [
+        "Q63933757"
+      ],
+      "peliculas": [
+        "spider-man-2-2004",
+        "spider-man-3-2007",
+        "spider-man-sin-camino-a-casa-2021"
+      ]
+    },
+    {
+      "id": "darcy-lewis",
+      "nombre": "Darcy Lewis",
+      "principal": false,
+      "wikidata": [
+        "Q21042559"
+      ],
+      "peliculas": [
+        "thor-2011",
+        "thor-the-dark-world-2013",
+        "thor-love-and-thunder-2022"
+      ]
+    },
+    {
+      "id": "dopinder",
+      "nombre": "Dopinder",
+      "principal": false,
+      "wikidata": [
+        "Q56243983"
+      ],
+      "peliculas": [
+        "deadpool-2016",
+        "deadpool-2-2018",
+        "deadpool-wolverine-2024"
+      ]
+    },
+    {
+      "id": "elektra",
+      "nombre": "Elektra",
+      "principal": false,
+      "wikidata": [
+        "Q121267435"
+      ],
+      "peliculas": [
+        "daredevil-2003",
+        "elektra-2005",
+        "deadpool-wolverine-2024"
+      ]
+    },
+    {
+      "id": "fandral",
+      "nombre": "Fandral",
+      "principal": false,
+      "wikidata": [
+        "Q24049985"
+      ],
+      "peliculas": [
+        "thor-2011",
+        "thor-the-dark-world-2013",
+        "thor-ragnarok-2017"
+      ]
+    },
+    {
+      "id": "flash-thompson",
+      "nombre": "Flash Thompson",
+      "principal": false,
+      "wikidata": [
+        "Q552000"
+      ],
+      "peliculas": [
+        "spider-man-2002",
+        "spider-man-3-2007",
+        "the-amazing-spider-man-2012"
+      ]
+    },
+    {
+      "id": "flash-thompson-q23894608",
+      "nombre": "Flash Thompson",
+      "principal": false,
+      "wikidata": [
+        "Q23894608"
+      ],
+      "peliculas": [
+        "spider-man-homecoming-2017",
+        "spider-man-far-from-home-2019",
+        "spider-man-sin-camino-a-casa-2021"
+      ]
+    },
+    {
+      "id": "frigga",
+      "nombre": "Frigga",
+      "principal": false,
+      "wikidata": [
+        "Q24049999"
+      ],
+      "peliculas": [
+        "thor-2011",
+        "thor-the-dark-world-2013",
+        "vengadores-endgame-2019"
+      ]
+    },
+    {
+      "id": "george-stacy",
+      "nombre": "George Stacy",
+      "principal": false,
+      "wikidata": [
+        "Q7879740"
+      ],
+      "peliculas": [
+        "spider-man-3-2007",
+        "the-amazing-spider-man-2012",
+        "the-amazing-spider-man-2-rise-of-electro-2014"
+      ]
+    },
+    {
+      "id": "grandmaster",
+      "nombre": "Grandmaster",
+      "principal": false,
+      "wikidata": [
+        "Q24176023"
+      ],
+      "peliculas": [
+        "guardianes-de-la-galaxia-vol-2-2017",
+        "thor-ragnarok-2017",
+        "thor-love-and-thunder-2022"
+      ]
+    },
+    {
+      "id": "harry-osborn",
+      "nombre": "Harry Osborn",
+      "principal": false,
+      "wikidata": [
+        "Q60464979"
+      ],
+      "peliculas": [
+        "spider-man-2002",
+        "spider-man-2-2004",
+        "spider-man-3-2007"
+      ]
+    },
+    {
+      "id": "havok",
+      "nombre": "Havok",
+      "principal": false,
+      "wikidata": [
+        "Q849486"
+      ],
+      "peliculas": [
+        "x-men-primera-generacion-2011",
+        "x-men-dias-del-futuro-pasado-2014",
+        "x-men-apocalipsis-2016"
+      ]
+    },
+    {
+      "id": "hogun",
+      "nombre": "Hogun",
+      "principal": false,
+      "wikidata": [
+        "Q24049976"
+      ],
+      "peliculas": [
+        "thor-2011",
+        "thor-the-dark-world-2013",
+        "thor-ragnarok-2017"
+      ]
+    },
+    {
+      "id": "j-jonah-jameson",
+      "nombre": "J. Jonah Jameson",
+      "principal": false,
+      "wikidata": [
+        "Q63735805"
+      ],
+      "peliculas": [
+        "spider-man-2002",
+        "spider-man-2-2004",
+        "spider-man-3-2007"
+      ]
+    },
+    {
+      "id": "jimmy-woo",
+      "nombre": "Jimmy Woo",
+      "principal": false,
+      "wikidata": [
+        "Q66133381"
+      ],
+      "peliculas": [
+        "ant-man-and-the-wasp-2018",
+        "ant-man-and-the-wasp-quantumania-2023",
+        "the-marvels-2023"
+      ]
+    },
+    {
+      "id": "johann-schmidt",
+      "nombre": "Johann Schmidt",
+      "principal": false,
+      "wikidata": [
+        "Q24200251"
+      ],
+      "peliculas": [
+        "capitan-america-el-primer-vengador-2011",
+        "avengers-infinity-war-2018",
+        "vengadores-endgame-2019"
+      ]
+    },
+    {
+      "id": "korg",
+      "nombre": "Korg",
+      "principal": false,
+      "wikidata": [
+        "Q42268330"
+      ],
+      "peliculas": [
+        "thor-ragnarok-2017",
+        "vengadores-endgame-2019",
+        "thor-love-and-thunder-2022"
+      ]
+    },
+    {
+      "id": "lady-sif",
+      "nombre": "Lady Sif",
+      "principal": false,
+      "wikidata": [
+        "Q24049994"
+      ],
+      "peliculas": [
+        "thor-2011",
+        "thor-the-dark-world-2013",
+        "thor-love-and-thunder-2022"
+      ]
+    },
+    {
+      "id": "leviatan",
+      "nombre": "Leviatan",
+      "principal": false,
+      "wikidata": [
+        "Q841372"
+      ],
+      "peliculas": [
+        "x-men-the-last-stand-2006",
+        "deadpool-2-2018",
+        "deadpool-wolverine-2024"
+      ]
+    },
+    {
+      "id": "maria-rambeau",
+      "nombre": "Maria Rambeau",
+      "principal": false,
+      "wikidata": [
+        "Q66133432"
+      ],
+      "peliculas": [
+        "capitana-marvel-2019",
+        "doctor-strange-en-el-multiverso-de-la-locura-2022",
+        "the-marvels-2023"
+      ]
+    },
+    {
+      "id": "moira-mactaggert",
+      "nombre": "Moira MacTaggert",
+      "principal": false,
+      "wikidata": [
+        "Q2361279"
+      ],
+      "peliculas": [
+        "x-men-the-last-stand-2006",
+        "x-men-primera-generacion-2011",
+        "x-men-apocalipsis-2016"
+      ]
+    },
+    {
+      "id": "negasonic-teenage-warhead",
+      "nombre": "Negasonic Teenage Warhead",
+      "principal": false,
+      "wikidata": [
+        "Q3985214"
+      ],
+      "peliculas": [
+        "deadpool-2016",
+        "deadpool-2-2018",
+        "deadpool-wolverine-2024"
+      ]
+    },
+    {
+      "id": "odin",
+      "nombre": "Odin",
+      "principal": false,
+      "wikidata": [
+        "Q24046126"
+      ],
+      "peliculas": [
+        "thor-2011",
+        "thor-the-dark-world-2013",
+        "thor-ragnarok-2017"
+      ]
+    },
+    {
+      "id": "pyro",
+      "nombre": "Pyro",
+      "principal": false,
+      "wikidata": [
+        "Q2339776"
+      ],
+      "peliculas": [
+        "x-men-2-2003",
+        "x-men-the-last-stand-2006",
+        "deadpool-wolverine-2024"
+      ]
+    },
+    {
+      "id": "ramonda",
+      "nombre": "Ramonda",
+      "principal": false,
+      "wikidata": [
+        "Q27902081"
+      ],
+      "peliculas": [
+        "black-panther-2018",
+        "vengadores-endgame-2019",
+        "black-panther-ii-wakanda-forever-2022"
+      ]
+    },
+    {
+      "id": "robbie-robertson",
+      "nombre": "Robbie Robertson",
+      "principal": false,
+      "wikidata": [
+        "Q944573"
+      ],
+      "peliculas": [
+        "spider-man-2002",
+        "spider-man-2-2004",
+        "spider-man-3-2007"
+      ]
+    },
+    {
+      "id": "roger-harrington",
+      "nombre": "Roger Harrington",
+      "principal": false,
+      "wikidata": [
+        "Q66192435"
+      ],
+      "peliculas": [
+        "the-incredible-hulk-2008",
+        "spider-man-homecoming-2017",
+        "spider-man-far-from-home-2019"
+      ]
+    },
+    {
+      "id": "sabretooth",
+      "nombre": "Sabretooth",
+      "principal": false,
+      "wikidata": [
+        "Q431862"
+      ],
+      "peliculas": [
+        "x-men-2000",
+        "x-men-origins-wolverine-2009",
+        "deadpool-wolverine-2024"
+      ]
+    },
+    {
+      "id": "taneleer-tivan",
+      "nombre": "Taneleer Tivan",
+      "principal": false,
+      "wikidata": [
+        "Q28914116"
+      ],
+      "peliculas": [
+        "thor-the-dark-world-2013",
+        "guardianes-de-la-galaxia-2014",
+        "avengers-infinity-war-2018"
+      ]
+    },
+    {
+      "id": "taskmaster",
+      "nombre": "Taskmaster",
+      "principal": false,
+      "wikidata": [
+        "Q2532044"
+      ],
+      "peliculas": [
+        "iron-man-captain-america-heroes-united-2014",
+        "black-widow-2021",
+        "thunderbolts-2025"
+      ]
+    },
+    {
+      "id": "ted-hoffman",
+      "nombre": "Ted Hoffman",
+      "principal": false,
+      "wikidata": [
+        "Q56244232"
+      ],
+      "peliculas": [
+        "spider-man-2002",
+        "spider-man-2-2004",
+        "spider-man-3-2007"
+      ]
+    },
+    {
+      "id": "valkyrie",
+      "nombre": "Valkyrie",
+      "principal": false,
+      "wikidata": [
+        "Q24175951"
+      ],
+      "peliculas": [
+        "thor-ragnarok-2017",
+        "vengadores-endgame-2019",
+        "thor-love-and-thunder-2022"
+      ]
+    },
+    {
+      "id": "volstagg",
+      "nombre": "Volstagg",
+      "principal": false,
+      "wikidata": [
+        "Q24046160"
+      ],
+      "peliculas": [
+        "thor-2011",
+        "thor-the-dark-world-2013",
+        "thor-ragnarok-2017"
+      ]
+    },
+    {
+      "id": "yukio",
+      "nombre": "Yukio",
+      "principal": false,
+      "wikidata": [
+        "Q8060735"
+      ],
+      "peliculas": [
+        "the-wolverine-2013",
+        "deadpool-2-2018",
+        "deadpool-wolverine-2024"
+      ]
+    },
+    {
+      "id": "adrian-toomes",
+      "nombre": "Adrian Toomes",
+      "principal": false,
+      "wikidata": [
+        "Q27813421"
+      ],
+      "peliculas": [
+        "spider-man-homecoming-2017",
+        "morbius-2022"
+      ]
+    },
+    {
+      "id": "alexander-pierce",
+      "nombre": "Alexander Pierce",
+      "principal": false,
+      "wikidata": [
+        "Q65929755"
+      ],
+      "peliculas": [
+        "captain-america-the-winter-soldier-2014",
+        "vengadores-endgame-2019"
+      ]
+    },
+    {
+      "id": "alicia-masters",
+      "nombre": "Alicia Masters",
+      "principal": false,
+      "wikidata": [
+        "Q63933572"
+      ],
+      "peliculas": [
+        "los-4-fantasticos-2005",
+        "los-4-fantasticos-y-silver-surfer-2007"
+      ]
+    },
+    {
+      "id": "ancient-one",
+      "nombre": "Ancient One",
+      "principal": false,
+      "wikidata": [
+        "Q24045741"
+      ],
+      "peliculas": [
+        "doctor-strange-2016",
+        "vengadores-endgame-2019"
+      ]
+    },
+    {
+      "id": "angel",
+      "nombre": "Ángel",
+      "principal": false,
+      "wikidata": [
+        "Q770064"
+      ],
+      "peliculas": [
+        "x-men-the-last-stand-2006",
+        "x-men-apocalipsis-2016"
+      ]
+    },
+    {
+      "id": "antorcha-humana",
+      "nombre": "Antorcha Humana",
+      "principal": false,
+      "wikidata": [
+        "Q584585"
+      ],
+      "peliculas": [
+        "the-fantastic-four-1994",
+        "deadpool-wolverine-2024"
+      ]
+    },
+    {
+      "id": "arnim-zola",
+      "nombre": "Arnim Zola",
+      "principal": false,
+      "wikidata": [
+        "Q26817985"
+      ],
+      "peliculas": [
+        "capitan-america-el-primer-vengador-2011",
+        "captain-america-the-winter-soldier-2014"
+      ]
+    },
+    {
+      "id": "ben-grimm",
+      "nombre": "Ben Grimm",
+      "principal": false,
+      "wikidata": [
+        "Q63761223"
+      ],
+      "peliculas": [
+        "los-4-fantasticos-2005",
+        "los-4-fantasticos-y-silver-surfer-2007"
+      ]
+    },
+    {
+      "id": "ben-grimm-q133697772",
+      "nombre": "Ben Grimm",
+      "principal": false,
+      "wikidata": [
+        "Q133697772"
+      ],
+      "peliculas": [
+        "the-fantastic-four-2025",
+        "avengers-the-kang-dynasty-2026"
+      ]
+    },
+    {
+      "id": "betty-ross",
+      "nombre": "Betty Ross",
+      "principal": false,
+      "wikidata": [
+        "Q65929788"
+      ],
+      "peliculas": [
+        "the-incredible-hulk-2008",
+        "captain-america-brave-new-world-2025"
+      ]
+    },
+    {
+      "id": "blob",
+      "nombre": "Blob",
+      "principal": false,
+      "wikidata": [
+        "Q371692"
+      ],
+      "peliculas": [
+        "x-men-origins-wolverine-2009",
+        "deadpool-wolverine-2024"
+      ]
+    },
+    {
+      "id": "brian-mckeever",
+      "nombre": "Brian McKeever",
+      "principal": false,
+      "wikidata": [
+        "Q66133301"
+      ],
+      "peliculas": [
+        "spider-man-homecoming-2017",
+        "avengers-infinity-war-2018"
+      ]
+    },
+    {
+      "id": "cameron-klein",
+      "nombre": "Cameron Klein",
+      "principal": false,
+      "wikidata": [
+        "Q66132762"
+      ],
+      "peliculas": [
+        "captain-america-the-winter-soldier-2014",
+        "avengers-age-of-ultron-2015"
+      ]
+    },
+    {
+      "id": "carina",
+      "nombre": "Carina",
+      "principal": false,
+      "wikidata": [
+        "Q52947928"
+      ],
+      "peliculas": [
+        "thor-the-dark-world-2013",
+        "guardianes-de-la-galaxia-2014"
+      ]
+    },
+    {
+      "id": "christine-everhart",
+      "nombre": "Christine Everhart",
+      "principal": false,
+      "wikidata": [
+        "Q23900407"
+      ],
+      "peliculas": [
+        "iron-man-2008",
+        "iron-man-2-2010"
+      ]
+    },
+    {
+      "id": "christine-palmer",
+      "nombre": "Christine Palmer",
+      "principal": false,
+      "wikidata": [
+        "Q26224467"
+      ],
+      "peliculas": [
+        "doctor-strange-2016",
+        "doctor-strange-en-el-multiverso-de-la-locura-2022"
+      ]
+    },
+    {
+      "id": "cindy-moon",
+      "nombre": "Cindy Moon",
+      "principal": false,
+      "wikidata": [
+        "Q66133282"
+      ],
+      "peliculas": [
+        "spider-man-homecoming-2017",
+        "avengers-infinity-war-2018"
+      ]
+    },
+    {
+      "id": "coach-wilson",
+      "nombre": "Coach Wilson",
+      "principal": false,
+      "wikidata": [
+        "Q66193513"
+      ],
+      "peliculas": [
+        "spider-man-homecoming-2017",
+        "spider-man-sin-camino-a-casa-2021"
+      ]
+    },
+    {
+      "id": "comadreja",
+      "nombre": "Comadreja",
+      "principal": false,
+      "wikidata": [
+        "Q1403772"
+      ],
+      "peliculas": [
+        "deadpool-2016",
+        "deadpool-2-2018"
+      ]
+    },
+    {
+      "id": "cooper-barton",
+      "nombre": "Cooper Barton",
+      "principal": false,
+      "wikidata": [
+        "Q66132777"
+      ],
+      "peliculas": [
+        "avengers-age-of-ultron-2015",
+        "vengadores-endgame-2019"
+      ]
+    },
+    {
+      "id": "corvus-glaive",
+      "nombre": "Corvus Glaive",
+      "principal": false,
+      "wikidata": [
+        "Q65935802"
+      ],
+      "peliculas": [
+        "avengers-infinity-war-2018",
+        "vengadores-endgame-2019"
+      ]
+    },
+    {
+      "id": "cull-obsidian",
+      "nombre": "Cull Obsidian",
+      "principal": false,
+      "wikidata": [
+        "Q65937931"
+      ],
+      "peliculas": [
+        "avengers-infinity-war-2018",
+        "vengadores-endgame-2019"
+      ]
+    },
+    {
+      "id": "dave",
+      "nombre": "Dave",
+      "principal": false,
+      "wikidata": [
+        "Q24276097"
+      ],
+      "peliculas": [
+        "ant-man-2015",
+        "ant-man-and-the-wasp-2018"
+      ]
+    },
+    {
+      "id": "doctor-list",
+      "nombre": "Doctor List",
+      "principal": false,
+      "wikidata": [
+        "Q66191108"
+      ],
+      "peliculas": [
+        "captain-america-the-winter-soldier-2014",
+        "avengers-age-of-ultron-2015"
+      ]
+    },
+    {
+      "id": "dr-nicodemus-west",
+      "nombre": "Dr. Nicodemus West",
+      "principal": false,
+      "wikidata": [
+        "Q24045748"
+      ],
+      "peliculas": [
+        "doctor-strange-2016",
+        "doctor-strange-en-el-multiverso-de-la-locura-2022"
+      ]
+    },
+    {
+      "id": "ebony-maw",
+      "nombre": "Ebony Maw",
+      "principal": false,
+      "wikidata": [
+        "Q65937943"
+      ],
+      "peliculas": [
+        "avengers-infinity-war-2018",
+        "vengadores-endgame-2019"
+      ]
+    },
+    {
+      "id": "emma-frost",
+      "nombre": "Emma Frost",
+      "principal": false,
+      "wikidata": [
+        "Q1995969"
+      ],
+      "peliculas": [
+        "x-men-origins-wolverine-2009",
+        "x-men-primera-generacion-2011"
+      ]
+    },
+    {
+      "id": "everett-k-ross",
+      "nombre": "Everett K. Ross",
+      "principal": false,
+      "wikidata": [
+        "Q24040913"
+      ],
+      "peliculas": [
+        "captain-america-civil-war-2016",
+        "black-panther-2018"
+      ]
+    },
+    {
+      "id": "flint-marko",
+      "nombre": "Flint Marko",
+      "principal": false,
+      "wikidata": [
+        "Q63761188"
+      ],
+      "peliculas": [
+        "spider-man-3-2007",
+        "spider-man-sin-camino-a-casa-2021"
+      ]
+    },
+    {
+      "id": "gambito",
+      "nombre": "Gambito",
+      "principal": false,
+      "wikidata": [
+        "Q2639150"
+      ],
+      "peliculas": [
+        "x-men-origins-wolverine-2009",
+        "deadpool-wolverine-2024"
+      ]
+    },
+    {
+      "id": "gwen-stacy",
+      "nombre": "Gwen Stacy",
+      "principal": false,
+      "wikidata": [
+        "Q98454800"
+      ],
+      "peliculas": [
+        "the-amazing-spider-man-2012",
+        "the-amazing-spider-man-2-rise-of-electro-2014"
+      ]
+    },
+    {
+      "id": "hamir",
+      "nombre": "Hamir",
+      "principal": false,
+      "wikidata": [
+        "Q27624531"
+      ],
+      "peliculas": [
+        "doctor-strange-2016",
+        "doctor-strange-en-el-multiverso-de-la-locura-2022"
+      ]
+    },
+    {
+      "id": "harley-keener",
+      "nombre": "Harley Keener",
+      "principal": false,
+      "wikidata": [
+        "Q25936379"
+      ],
+      "peliculas": [
+        "iron-man-3-2013",
+        "vengadores-endgame-2019"
+      ]
+    },
+    {
+      "id": "ho-yinsen",
+      "nombre": "Ho Yinsen",
+      "principal": false,
+      "wikidata": [
+        "Q65929293"
+      ],
+      "peliculas": [
+        "iron-man-2008",
+        "iron-man-3-2013"
+      ]
+    },
+    {
+      "id": "irani-rael-nova-prime",
+      "nombre": "Irani Rael / Nova Prime",
+      "principal": false,
+      "wikidata": [
+        "Q24050112"
+      ],
+      "peliculas": [
+        "guardianes-de-la-galaxia-2014",
+        "guardianes-de-la-galaxia-vol-2-2017"
+      ]
+    },
+    {
+      "id": "j-jonah-jameson-q65935839",
+      "nombre": "J. Jonah Jameson",
+      "principal": false,
+      "wikidata": [
+        "Q65935839"
+      ],
+      "peliculas": [
+        "spider-man-far-from-home-2019",
+        "spider-man-sin-camino-a-casa-2021"
+      ]
+    },
+    {
+      "id": "jack-rollins",
+      "nombre": "Jack Rollins",
+      "principal": false,
+      "wikidata": [
+        "Q66190289"
+      ],
+      "peliculas": [
+        "captain-america-the-winter-soldier-2014",
+        "vengadores-endgame-2019"
+      ]
+    },
+    {
+      "id": "james-paxton",
+      "nombre": "James Paxton",
+      "principal": false,
+      "wikidata": [
+        "Q24275991"
+      ],
+      "peliculas": [
+        "ant-man-2015",
+        "ant-man-and-the-wasp-2018"
+      ]
+    },
+    {
+      "id": "jason-ionello",
+      "nombre": "Jason Ionello",
+      "principal": false,
+      "wikidata": [
+        "Q66192223"
+      ],
+      "peliculas": [
+        "spider-man-homecoming-2017",
+        "spider-man-far-from-home-2019"
+      ]
+    },
+    {
+      "id": "joaquin-torres",
+      "nombre": "Joaquín Torres",
+      "principal": false,
+      "wikidata": [
+        "Q133806334"
+      ],
+      "peliculas": [
+        "captain-america-brave-new-world-2025",
+        "avengers-the-kang-dynasty-2026"
+      ]
+    },
+    {
+      "id": "john-walker",
+      "nombre": "John Walker",
+      "principal": false,
+      "wikidata": [
+        "Q66817198"
+      ],
+      "peliculas": [
+        "thunderbolts-2025",
+        "avengers-the-kang-dynasty-2026"
+      ]
+    },
+    {
+      "id": "johnny-storm",
+      "nombre": "Johnny Storm",
+      "principal": false,
+      "wikidata": [
+        "Q125179110"
+      ],
+      "peliculas": [
+        "los-4-fantasticos-2005",
+        "los-4-fantasticos-y-silver-surfer-2007"
+      ]
+    },
+    {
+      "id": "johnny-storm-q133697756",
+      "nombre": "Johnny Storm",
+      "principal": false,
+      "wikidata": [
+        "Q133697756"
+      ],
+      "peliculas": [
+        "the-fantastic-four-2025",
+        "avengers-the-kang-dynasty-2026"
+      ]
+    },
+    {
+      "id": "jubilo",
+      "nombre": "Júbilo",
+      "principal": false,
+      "wikidata": [
+        "Q59665"
+      ],
+      "peliculas": [
+        "x-men-2000",
+        "x-men-apocalipsis-2016"
+      ]
+    },
+    {
+      "id": "julius-dell",
+      "nombre": "Julius Dell",
+      "principal": false,
+      "wikidata": [
+        "Q66198297"
+      ],
+      "peliculas": [
+        "spider-man-far-from-home-2019",
+        "spider-man-sin-camino-a-casa-2021"
+      ]
+    },
+    {
+      "id": "korath",
+      "nombre": "Korath",
+      "principal": false,
+      "wikidata": [
+        "Q65929696"
+      ],
+      "peliculas": [
+        "guardianes-de-la-galaxia-2014",
+        "capitana-marvel-2019"
+      ]
+    },
+    {
+      "id": "kurt",
+      "nombre": "Kurt",
+      "principal": false,
+      "wikidata": [
+        "Q24276100"
+      ],
+      "peliculas": [
+        "ant-man-2015",
+        "ant-man-and-the-wasp-2018"
+      ]
+    },
+    {
+      "id": "lady-deathstrike",
+      "nombre": "Lady Deathstrike",
+      "principal": false,
+      "wikidata": [
+        "Q2448071"
+      ],
+      "peliculas": [
+        "x-men-2-2003",
+        "deadpool-wolverine-2024"
+      ]
+    },
+    {
+      "id": "laura-barton",
+      "nombre": "Laura Barton",
+      "principal": false,
+      "wikidata": [
+        "Q66190494"
+      ],
+      "peliculas": [
+        "avengers-age-of-ultron-2015",
+        "vengadores-endgame-2019"
+      ]
+    },
+    {
+      "id": "lila-barton",
+      "nombre": "Lila Barton",
+      "principal": false,
+      "wikidata": [
+        "Q66190801"
+      ],
+      "peliculas": [
+        "avengers-age-of-ultron-2015",
+        "vengadores-endgame-2019"
+      ]
+    },
+    {
+      "id": "luis",
+      "nombre": "Luis",
+      "principal": false,
+      "wikidata": [
+        "Q24276086"
+      ],
+      "peliculas": [
+        "ant-man-2015",
+        "ant-man-and-the-wasp-2018"
+      ]
+    },
+    {
+      "id": "mac-gargan",
+      "nombre": "Mac Gargan",
+      "principal": false,
+      "wikidata": [
+        "Q66193253"
+      ],
+      "peliculas": [
+        "spider-man-homecoming-2017",
+        "spider-man-brand-new-day-2026"
+      ]
+    },
+    {
+      "id": "maggie-lang",
+      "nombre": "Maggie Lang",
+      "principal": false,
+      "wikidata": [
+        "Q24276092"
+      ],
+      "peliculas": [
+        "ant-man-2015",
+        "ant-man-and-the-wasp-2018"
+      ]
+    },
+    {
+      "id": "matt-murdock",
+      "nombre": "Matt Murdock",
+      "principal": false,
+      "wikidata": [
+        "Q110951932"
+      ],
+      "peliculas": [
+        "daredevil-2003",
+        "elektra-2005"
+      ]
+    },
+    {
+      "id": "mayor-allen",
+      "nombre": "Mayor Allen",
+      "principal": false,
+      "wikidata": [
+        "Q23750571"
+      ],
+      "peliculas": [
+        "iron-man-2008",
+        "iron-man-2-2010"
+      ]
+    },
+    {
+      "id": "mefisto",
+      "nombre": "Mefisto",
+      "principal": false,
+      "wikidata": [
+        "Q2418665"
+      ],
+      "peliculas": [
+        "ghost-rider-2007",
+        "ghost-rider-espiritu-de-venganza-2011"
+      ]
+    },
+    {
+      "id": "meredith-quill",
+      "nombre": "Meredith Quill",
+      "principal": false,
+      "wikidata": [
+        "Q65952811"
+      ],
+      "peliculas": [
+        "guardianes-de-la-galaxia-2014",
+        "guardianes-de-la-galaxia-vol-2-2017"
+      ]
+    },
+    {
+      "id": "monica-rambeau",
+      "nombre": "Monica Rambeau",
+      "principal": false,
+      "wikidata": [
+        "Q66133435"
+      ],
+      "peliculas": [
+        "capitana-marvel-2019",
+        "the-marvels-2023"
+      ]
+    },
+    {
+      "id": "mordo",
+      "nombre": "Mordo",
+      "principal": false,
+      "wikidata": [
+        "Q24043637"
+      ],
+      "peliculas": [
+        "doctor-strange-2016",
+        "doctor-strange-en-el-multiverso-de-la-locura-2022"
+      ]
+    },
+    {
+      "id": "nakia",
+      "nombre": "Nakia",
+      "principal": false,
+      "wikidata": [
+        "Q26268859"
+      ],
+      "peliculas": [
+        "black-panther-2018",
+        "black-panther-ii-wakanda-forever-2022"
+      ]
+    },
+    {
+      "id": "namor",
+      "nombre": "Namor",
+      "principal": false,
+      "wikidata": [
+        "Q116025879"
+      ],
+      "peliculas": [
+        "black-panther-ii-wakanda-forever-2022",
+        "avengers-the-kang-dynasty-2026"
+      ]
+    },
+    {
+      "id": "nathaniel-pietro-barton",
+      "nombre": "Nathaniel Pietro Barton",
+      "principal": false,
+      "wikidata": [
+        "Q66190714"
+      ],
+      "peliculas": [
+        "avengers-age-of-ultron-2015",
+        "vengadores-endgame-2019"
+      ]
+    },
+    {
+      "id": "pietro-maximoff",
+      "nombre": "Pietro Maximoff",
+      "principal": false,
+      "wikidata": [
+        "Q27101792"
+      ],
+      "peliculas": [
+        "captain-america-the-winter-soldier-2014",
+        "avengers-age-of-ultron-2015"
+      ]
+    },
+    {
+      "id": "psylocke",
+      "nombre": "Psylocke",
+      "principal": false,
+      "wikidata": [
+        "Q973050"
+      ],
+      "peliculas": [
+        "x-men-the-last-stand-2006",
+        "x-men-apocalipsis-2016"
+      ]
+    },
+    {
+      "id": "pua",
+      "nombre": "Púa",
+      "principal": false,
+      "wikidata": [
+        "Q7271977"
+      ],
+      "peliculas": [
+        "x-men-the-last-stand-2006",
+        "deadpool-wolverine-2024"
+      ]
+    },
+    {
+      "id": "ratero",
+      "nombre": "Ratero",
+      "principal": false,
+      "wikidata": [
+        "Q606569"
+      ],
+      "peliculas": [
+        "spider-man-2002",
+        "spider-man-3-2007"
+      ]
+    },
+    {
+      "id": "red-skull",
+      "nombre": "Red Skull",
+      "principal": false,
+      "wikidata": [
+        "Q2034529"
+      ],
+      "peliculas": [
+        "capitan-america-1990",
+        "iron-man-captain-america-heroes-united-2014"
+      ]
+    },
+    {
+      "id": "reed-richards",
+      "nombre": "Reed Richards",
+      "principal": false,
+      "wikidata": [
+        "Q63761245"
+      ],
+      "peliculas": [
+        "los-4-fantasticos-2005",
+        "los-4-fantasticos-y-silver-surfer-2007"
+      ]
+    },
+    {
+      "id": "rhino",
+      "nombre": "Rhino",
+      "principal": false,
+      "wikidata": [
+        "Q572626"
+      ],
+      "peliculas": [
+        "the-amazing-spider-man-2-rise-of-electro-2014",
+        "kraven-el-cazador-2024"
+      ]
+    },
+    {
+      "id": "robert-kelly",
+      "nombre": "Robert Kelly",
+      "principal": false,
+      "wikidata": [
+        "Q662139"
+      ],
+      "peliculas": [
+        "x-men-2000",
+        "x-men-2-2003"
+      ]
+    },
+    {
+      "id": "ronan",
+      "nombre": "Ronan",
+      "principal": false,
+      "wikidata": [
+        "Q52947626"
+      ],
+      "peliculas": [
+        "guardianes-de-la-galaxia-2014",
+        "capitana-marvel-2019"
+      ]
+    },
+    {
+      "id": "sally-avril",
+      "nombre": "Sally Avril",
+      "principal": false,
+      "wikidata": [
+        "Q66133287"
+      ],
+      "peliculas": [
+        "spider-man-homecoming-2017",
+        "avengers-infinity-war-2018"
+      ]
+    },
+    {
+      "id": "samuel-sterns",
+      "nombre": "Samuel Sterns",
+      "principal": false,
+      "wikidata": [
+        "Q65929846"
+      ],
+      "peliculas": [
+        "the-incredible-hulk-2008",
+        "captain-america-brave-new-world-2025"
+      ]
+    },
+    {
+      "id": "sapo",
+      "nombre": "Sapo",
+      "principal": false,
+      "wikidata": [
+        "Q2377661"
+      ],
+      "peliculas": [
+        "x-men-2000",
+        "x-men-dias-del-futuro-pasado-2014"
+      ]
+    },
+    {
+      "id": "senador-stern",
+      "nombre": "Senador Stern",
+      "principal": false,
+      "wikidata": [
+        "Q23900437"
+      ],
+      "peliculas": [
+        "iron-man-2-2010",
+        "captain-america-the-winter-soldier-2014"
+      ]
+    },
+    {
+      "id": "shang-chi",
+      "nombre": "Shang-Chi",
+      "principal": false,
+      "wikidata": [
+        "Q65929198"
+      ],
+      "peliculas": [
+        "shang-chi-and-the-legend-of-the-ten-rings-2021",
+        "avengers-the-kang-dynasty-2026"
+      ]
+    },
+    {
+      "id": "sharon-carter-agente-13",
+      "nombre": "Sharon Carter / Agente 13",
+      "principal": false,
+      "wikidata": [
+        "Q24027486"
+      ],
+      "peliculas": [
+        "captain-america-the-winter-soldier-2014",
+        "captain-america-civil-war-2016"
+      ]
+    },
+    {
+      "id": "shatterstar",
+      "nombre": "Shatterstar",
+      "principal": false,
+      "wikidata": [
+        "Q2275950"
+      ],
+      "peliculas": [
+        "deadpool-2-2018",
+        "deadpool-wolverine-2024"
+      ]
+    },
+    {
+      "id": "soren",
+      "nombre": "Soren",
+      "principal": false,
+      "wikidata": [
+        "Q66189494"
+      ],
+      "peliculas": [
+        "capitana-marvel-2019",
+        "spider-man-far-from-home-2019"
+      ]
+    },
+    {
+      "id": "stakar-ogord",
+      "nombre": "Stakar Ogord",
+      "principal": false,
+      "wikidata": [
+        "Q65952746"
+      ],
+      "peliculas": [
+        "guardianes-de-la-galaxia-vol-2-2017",
+        "guardianes-de-la-galaxia-vol-3-2023"
+      ]
+    },
+    {
+      "id": "sue-storm",
+      "nombre": "Sue Storm",
+      "principal": false,
+      "wikidata": [
+        "Q133697747"
+      ],
+      "peliculas": [
+        "the-fantastic-four-2025",
+        "avengers-the-kang-dynasty-2026"
+      ]
+    },
+    {
+      "id": "sunspot",
+      "nombre": "Sunspot",
+      "principal": false,
+      "wikidata": [
+        "Q601199"
+      ],
+      "peliculas": [
+        "x-men-dias-del-futuro-pasado-2014",
+        "x-men-nuevos-mutantes-2020"
+      ]
+    },
+    {
+      "id": "susan-storm",
+      "nombre": "Susan Storm",
+      "principal": false,
+      "wikidata": [
+        "Q63761219"
+      ],
+      "peliculas": [
+        "los-4-fantasticos-2005",
+        "los-4-fantasticos-y-silver-surfer-2007"
+      ]
+    },
+    {
+      "id": "t-chaka",
+      "nombre": "T'Chaka",
+      "principal": false,
+      "wikidata": [
+        "Q24004905"
+      ],
+      "peliculas": [
+        "captain-america-civil-war-2016",
+        "black-panther-2018"
+      ]
+    },
+    {
+      "id": "talos",
+      "nombre": "Talos",
+      "principal": false,
+      "wikidata": [
+        "Q66189316"
+      ],
+      "peliculas": [
+        "capitana-marvel-2019",
+        "spider-man-far-from-home-2019"
+      ]
+    },
+    {
+      "id": "the-other",
+      "nombre": "The Other",
+      "principal": false,
+      "wikidata": [
+        "Q55221009"
+      ],
+      "peliculas": [
+        "the-avengers-2012",
+        "guardianes-de-la-galaxia-2014"
+      ]
+    },
+    {
+      "id": "trevor-slattery",
+      "nombre": "Trevor Slattery",
+      "principal": false,
+      "wikidata": [
+        "Q24207018"
+      ],
+      "peliculas": [
+        "iron-man-3-2013",
+        "shang-chi-and-the-legend-of-the-ten-rings-2021"
+      ]
+    },
+    {
+      "id": "ulysses-klaue",
+      "nombre": "Ulysses Klaue",
+      "principal": false,
+      "wikidata": [
+        "Q27092482"
+      ],
+      "peliculas": [
+        "avengers-age-of-ultron-2015",
+        "black-panther-2018"
+      ]
+    },
+    {
+      "id": "ursula-ditkovich",
+      "nombre": "Ursula Ditkovich",
+      "principal": false,
+      "wikidata": [
+        "Q56244267"
+      ],
+      "peliculas": [
+        "spider-man-2-2004",
+        "spider-man-3-2007"
+      ]
+    },
+    {
+      "id": "valentina-allegra-de-fontaine",
+      "nombre": "Valentina Allegra de Fontaine",
+      "principal": false,
+      "wikidata": [
+        "Q3553620"
+      ],
+      "peliculas": [
+        "nick-fury-agent-of-s-h-i-e-l-d-1998",
+        "thunderbolts-2025"
+      ]
+    },
+    {
+      "id": "victor-von-doom",
+      "nombre": "Victor von Doom",
+      "principal": false,
+      "wikidata": [
+        "Q125179108"
+      ],
+      "peliculas": [
+        "los-4-fantasticos-2005",
+        "los-4-fantasticos-y-silver-surfer-2007"
+      ]
+    },
+    {
+      "id": "viper",
+      "nombre": "Viper",
+      "principal": false,
+      "wikidata": [
+        "Q568267"
+      ],
+      "peliculas": [
+        "nick-fury-agent-of-s-h-i-e-l-d-1998",
+        "the-wolverine-2013"
+      ]
+    },
+    {
+      "id": "viuda-negra-q4009216",
+      "nombre": "Viuda Negra",
+      "principal": false,
+      "wikidata": [
+        "Q4009216"
+      ],
+      "peliculas": [
+        "thunderbolts-2025",
+        "spider-man-brand-new-day-2026"
+      ]
+    },
+    {
+      "id": "w-kabi",
+      "nombre": "W'Kabi",
+      "principal": false,
+      "wikidata": [
+        "Q27147410"
+      ],
+      "peliculas": [
+        "black-panther-2018",
+        "black-panther-ii-wakanda-forever-2022"
+      ]
+    },
+    {
+      "id": "william-ginter-riva",
+      "nombre": "William Ginter Riva",
+      "principal": false,
+      "wikidata": [
+        "Q23750514"
+      ],
+      "peliculas": [
+        "iron-man-2008",
+        "spider-man-far-from-home-2019"
+      ]
+    },
+    {
+      "id": "wolfgang-von-strucker",
+      "nombre": "Wolfgang von Strucker",
+      "principal": false,
+      "wikidata": [
+        "Q65929369"
+      ],
+      "peliculas": [
+        "captain-america-the-winter-soldier-2014",
+        "avengers-age-of-ultron-2015"
+      ]
+    },
+    {
+      "id": "x-23",
+      "nombre": "X-23",
+      "principal": false,
+      "wikidata": [
+        "Q1872439"
+      ],
+      "peliculas": [
+        "logan-2017",
+        "deadpool-wolverine-2024"
+      ]
+    },
+    {
+      "id": "yelena-belova",
+      "nombre": "Yelena Belova",
+      "principal": false,
+      "wikidata": [
+        "Q107506977"
+      ],
+      "peliculas": [
+        "black-widow-2021",
+        "avengers-the-kang-dynasty-2026"
+      ]
+    },
+    {
+      "id": "yondu-udonta",
+      "nombre": "Yondu Udonta",
+      "principal": false,
+      "wikidata": [
+        "Q24050093"
+      ],
+      "peliculas": [
+        "guardianes-de-la-galaxia-2014",
+        "guardianes-de-la-galaxia-vol-2-2017"
+      ]
+    }
+  ]
+}

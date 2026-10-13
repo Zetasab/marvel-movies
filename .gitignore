@@ -22,6 +22,8 @@
 
 # misc
 .DS_Store
+Thumbs.db
+desktop.ini
 *.pem
 
 # debug
@@ -31,7 +33,9 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # env files (can opt-in for committing if needed)
+# Aquí irán TMDB_API_KEY o NEXT_PUBLIC_SITE_URL; no se suben. Sí se puede subir una plantilla .env.example
 .env*
+!.env.example
 
 # vercel
 .vercel
@@ -39,3 +43,16 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# datos: temporales que crea scripts/actualizar-datos.mjs al escribir data/*.json (si se corta a mitad).
+# Los JSON de data/ SÍ se suben: la web los necesita para compilar.
+*.tmp
+
+# logs
+*.log
+
+# editores
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
