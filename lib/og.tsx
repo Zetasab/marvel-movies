@@ -8,6 +8,7 @@ import sharp from "sharp";
 import { getUltimaActualizacion } from "@/lib/datos";
 import { getPeliculasListado } from "@/lib/filas";
 import { LISTADOS } from "@/lib/listados";
+import { getFichasPersonaje } from "@/lib/personajes";
 import { NOMBRE_SITIO } from "@/lib/sitio";
 
 // Imágenes al compartir un enlace (WhatsApp, Telegram, X, Facebook, LinkedIn, Discord…): 1200×630, generadas en el
@@ -116,6 +117,28 @@ export const IMAGENES_OG: Record<string, () => Contenido> = {
     pie: "Sigue a cada personaje de película en película",
     foto: "mapa",
   }),
+  personajes: () => ({
+    alt: "Personajes de Marvel y sus películas",
+    antetitulo: `${getUltimaActualizacion().totalPersonajes} personajes`,
+    titulo: "En qué películas sale cada personaje de Marvel",
+    pie: "Iron Man, Thor, Spider-Man, Lobezno… película a película",
+    foto: "mapa",
+  }),
+  // Una por personaje principal (personaje-iron-man…); los demás usan la genérica de personajes
+  ...Object.fromEntries(
+    [...getFichasPersonaje().values()]
+      .filter((f) => f.personaje.principal)
+      .map((f) => [
+        imagenOgPersonaje(f.personaje.id),
+        (): Contenido => ({
+          alt: `Películas de ${f.titulo} en orden`,
+          antetitulo: `${f.peliculas.length} películas`,
+          titulo: `Películas de ${f.titulo} en orden`,
+          pie: f.interpretes.length ? `Con ${f.interpretes.slice(0, 3).join(", ")}` : "Película a película, con el mapa del multiverso",
+          foto: "mapa",
+        }),
+      ]),
+  ),
   // Una por listado, con el nombre de su ruta: mcu-orden-cronologico, mcu-orden-de-estreno…
   ...Object.fromEntries(
     LISTADOS.map((l) => [
@@ -130,6 +153,10 @@ export const IMAGENES_OG: Record<string, () => Contenido> = {
     ]),
   ),
 };
+
+export function imagenOgPersonaje(id: string) {
+  return `personaje-${id}`;
+}
 
 // Para el `openGraph.images` de los metadatos de cada página (X/Twitter usa la misma si no tiene propia)
 export function metadatosImagenOg(nombre: keyof typeof IMAGENES_OG): NonNullable<Metadata["openGraph"]>["images"] {

@@ -13,37 +13,39 @@ export function getPeliculasListado(listado: Pick<Listado, "modo" | "soloMcu">):
   const lista = getPeliculas()
     .filter((p) => !listado.soloMcu || p.mcu)
     .filter((p) => listado.modo !== "cronologico" || cronologia.has(p.id))
-    .map((p) => ({
-      pelicula: p,
-      fila: {
-        id: p.id,
-        titulo: p.titulo,
-        tituloOriginal: p.tituloOriginal,
-        anio: p.anio,
-        estreno: formatearEstreno(p.fechaEstreno, p.anio),
-        proximamente: p.proximamente,
-        mcu: p.mcu,
-        tipo: p.tipo,
-        formato: p.formato,
-        poster: miniatura(p.poster),
-        directores: p.directores,
-        reparto: p.reparto.slice(0, 4).map((r) => r.actor),
-        duracionMin: p.duracionMin,
-        recaudacion: formatearDolares(p.recaudacionUSD),
-        resumen: p.sinopsis ?? p.resumen,
-        enlaces: { wikipedia: p.enlaces.wikipediaEs ?? p.enlaces.wikipediaEn, imdb: p.enlaces.imdb },
-        cronologia: cronologia.get(p.id) ?? null,
-        detalle: {
-          guionistas: p.guionistas.slice(0, 6),
-          reparto: p.reparto.slice(0, 12),
-          generos: p.generos.filter((g) => g !== "cine de superhéroes"),
-          productoras: p.productoras,
-          presupuesto: formatearDolares(p.presupuestoUSD),
-        },
-      },
-    }));
+    .map((p) => ({ pelicula: p, fila: filaDe(p, cronologia) }));
 
   // peliculas.json ya viene por orden de estreno
   if (listado.modo === "cronologico") lista.sort((a, b) => a.fila.cronologia!.posicion - b.fila.cronologia!.posicion);
   return lista;
+}
+
+// Lo que pinta una fila de película (también la usan las fichas de personaje)
+export function filaDe(p: Pelicula, cronologia = getOrdenCronologico()): PeliculaFila {
+  return {
+    id: p.id,
+    titulo: p.titulo,
+    tituloOriginal: p.tituloOriginal,
+    anio: p.anio,
+    estreno: formatearEstreno(p.fechaEstreno, p.anio),
+    proximamente: p.proximamente,
+    mcu: p.mcu,
+    tipo: p.tipo,
+    formato: p.formato,
+    poster: miniatura(p.poster),
+    directores: p.directores,
+    reparto: p.reparto.slice(0, 4).map((r) => r.actor),
+    duracionMin: p.duracionMin,
+    recaudacion: formatearDolares(p.recaudacionUSD),
+    resumen: p.sinopsis ?? p.resumen,
+    enlaces: { wikipedia: p.enlaces.wikipediaEs ?? p.enlaces.wikipediaEn, imdb: p.enlaces.imdb },
+    cronologia: cronologia.get(p.id) ?? null,
+    detalle: {
+      guionistas: p.guionistas.slice(0, 6),
+      reparto: p.reparto.slice(0, 12),
+      generos: p.generos.filter((g) => g !== "cine de superhéroes"),
+      productoras: p.productoras,
+      presupuesto: formatearDolares(p.presupuestoUSD),
+    },
+  };
 }

@@ -58,6 +58,11 @@ export function Pie() {
                 Mapa del multiverso
               </Link>
             </li>
+            <li>
+              <Link href="/personajes" className="inline-block text-muted-foreground transition-[color,translate] duration-200 hover:translate-x-1 hover:text-neon">
+                Personajes y sus películas
+              </Link>
+            </li>
           </ul>
         </nav>
 

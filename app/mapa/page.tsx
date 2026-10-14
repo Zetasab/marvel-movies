@@ -5,6 +5,7 @@ import { getOrdenCronologico, getPeliculas, getPersonajes, getUltimaActualizacio
 import { colorDe, type PeliculaMapa, type PersonajeMapa } from "@/lib/mapa/layout";
 import { formatearFecha } from "@/lib/formato";
 import { openGraphDe } from "@/lib/og";
+import { getFichasPersonaje } from "@/lib/personajes";
 import { URL_SITIO, jsonLd } from "@/lib/sitio";
 
 export const metadata: Metadata = {
@@ -37,12 +38,14 @@ export default function MapaPage() {
     enlaces: p.enlaces,
     cronologia: p.mcu && cronologia.has(p.id) ? { posicion: cronologia.get(p.id)!.posicion, epoca: cronologia.get(p.id)!.epoca } : null,
   }));
+  const fichas = getFichasPersonaje();
   const pjs: PersonajeMapa[] = personajes.map((c, i) => ({
     id: c.id,
     nombre: c.nombre,
     principal: c.principal,
     peliculas: c.peliculas,
     color: colorDe(c.id, i),
+    interpretes: fichas.get(c.id)!.interpretes,
   }));
 
   const datos = {
@@ -61,3 +64,4 @@ export default function MapaPage() {
     </>
   );
 }
+

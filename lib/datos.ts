@@ -46,6 +46,7 @@ export type Personaje = {
   principal: boolean;
   wikidata: string[];
   peliculas: string[]; // ids de Pelicula
+  interpretes?: string[]; // actores, por número de películas (no está en los datos generados antes de añadirlo)
 };
 
 export type UltimaActualizacion = {

@@ -18,6 +18,7 @@ export function PanelDetalle({
   continuaEn,
   onCerrar,
   onIr,
+  onPersonaje,
 }: {
   pelicula: Nodo;
   personajes: PersonajeMapa[];
@@ -26,6 +27,7 @@ export function PanelDetalle({
   continuaEn: Conexion[];
   onCerrar: () => void;
   onIr: (id: string) => void;
+  onPersonaje: (id: string) => void;
 }) {
   const ordenados = [...personajes].sort(
     (a, b) => Number(seleccion.has(b.id)) - Number(seleccion.has(a.id)) || Number(b.principal) - Number(a.principal),
@@ -73,7 +75,12 @@ export function PanelDetalle({
               <h4 className="mb-2 font-mono text-[11px] font-medium tracking-wider text-muted-foreground uppercase">Personajes</h4>
               <div className="flex flex-wrap gap-1.5">
                 {ordenados.map((c) => (
-                  <Badge key={c.id} variant="outline" className="gap-1.5">
+                  <Badge
+                    key={c.id}
+                    variant="outline"
+                    render={<button onClick={() => onPersonaje(c.id)} title={`Ver ficha de ${c.nombre}`} />}
+                    className="cursor-pointer gap-1.5 transition-colors hover:border-foreground/30 hover:bg-foreground/5"
+                  >
                     <span
                       className="size-2 rounded-full border"
                       style={{ borderColor: c.color, background: seleccion.has(c.id) ? c.color : "transparent" }}

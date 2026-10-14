@@ -27,6 +27,7 @@ import {
   TARJETA_W,
   calcularLayout,
   enAmbito,
+  fechaNum,
   partirTitulo,
   puntosCable,
   vistaDe,
@@ -41,6 +42,7 @@ import { cn } from "@/lib/utils";
 
 import { Interruptor } from "./interruptor";
 import { PanelDetalle, type Conexion } from "./panel-detalle";
+import { PanelPersonaje } from "./panel-personaje";
 import { PanelPersonajes, type ModoSeleccion } from "./panel-personajes";
 
 type Foco = { pelicula: string } | { personaje: string } | null;
@@ -94,6 +96,8 @@ export function MapaRelaciones({
   const [posiciones, setPosiciones] = useState<Posiciones>({});
   const [cargado, setCargado] = useState(false);
   const [fijado, setFijado] = useState<string | null>(null);
+  // Personaje fijado al pulsar uno de sus cables (excluyente con la película fijada)
+  const [personajeFijado, setPersonajeFijado] = useState<string | null>(null);
   const [hover, setHover] = useState<Foco>(null);
   const [arrastre, setArrastre] = useState<{
     id: string;
@@ -122,15 +126,25 @@ export function MapaRelaciones({
     const url = filtrosUrl.current;
     const a = url.get("ambito") ?? leer<Ambito>(CLAVES.ambito);
     const o = url.get("orden") ?? leer<Orden>(CLAVES.orden);
+    // Personaje que llega desde su ficha: se abre su panel y se marca para que se vean sus cables
+    const pj = url.get("personaje");
+    const conPersonaje = pj && personajes.some((c) => c.id === pj) ? pj : null;
     // Se quitan de la URL ya aplicados: a partir de aquí los interruptores son los que mandan
-    if (url.has("ambito") || url.has("orden")) history.replaceState(history.state, "", window.location.pathname);
+    if (url.has("ambito") || url.has("orden") || url.has("personaje"))
+      history.replaceState(history.state, "", window.location.pathname);
     const s = leer<string[]>(CLAVES.seleccion);
     const p = leer<Posiciones>(CLAVES.posiciones);
     if (a === "mcu" || a === "todo") setAmbito(a);
     if (o === "estreno" || o === "cronologico") setOrden(o);
-    if (s) setSeleccion(new Set(s));
+    if (s || conPersonaje)
+      setSeleccion(
+        new Set([...(s ?? principales), ...(conPersonaje ? [conPersonaje] : [])]),
+      );
+    if (conPersonaje) setPersonajeFijado(conPersonaje);
     if (p) setPosiciones(p);
     setCargado(true);
+    // Solo al montar: personajes y principales vienen del servidor y no cambian
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   useEffect(() => {
     if (!cargado) return;
@@ -207,7 +221,8 @@ export function MapaRelaciones({
     return () => ro.disconnect();
   }, [encuadrar]);
 
-  const centrarEn = (id: string) => {
+  // `fijar`: además de centrarla, la deja fijada (y abre su panel)
+  const centrarEn = (id: string, fijar = true) => {
     const nodo = layout.porId.get(id);
     const svg = svgRef.current;
     if (!nodo || !svg || !zoomRef.current) return;
@@ -220,7 +235,12 @@ export function MapaRelaciones({
       )
       .scale(k);
     select(svg).transition().duration(600).call(zoomRef.current.transform, t);
+    if (fijar) fijarPelicula(id);
+  };
+
+  const fijarPelicula = (id: string | null) => {
     setFijado(id);
+    setPersonajeFijado(null);
   };
 
   // ---------- arrastrar películas ----------
@@ -254,7 +274,7 @@ export function MapaRelaciones({
     arrastreRef.current = null;
     if (!a) return;
     if (!a.movido) {
-      setFijado((f) => (f === a.id ? null : a.id));
+      fijarPelicula(fijado === a.id ? null : a.id);
       return;
     }
     if (arrastre)
@@ -271,7 +291,13 @@ export function MapaRelaciones({
   // ---------- foco ----------
 
   const activos = useMemo(() => {
-    const foco: Foco = hover ?? (fijado ? { pelicula: fijado } : null);
+    const foco: Foco =
+      hover ??
+      (fijado
+        ? { pelicula: fijado }
+        : personajeFijado
+          ? { personaje: personajeFijado }
+          : null);
     if (!foco) return null;
     const cables = new Set<string>();
     const pelis = new Set<string>("pelicula" in foco ? [foco.pelicula] : []);
@@ -287,7 +313,7 @@ export function MapaRelaciones({
       }
     }
     return { cables, pelis };
-  }, [hover, fijado, layout.cables]);
+  }, [hover, fijado, personajeFijado, layout.cables]);
 
   // ---------- paneles ----------
 
@@ -337,6 +363,25 @@ export function MapaRelaciones({
     }
     return [...grupos.values()];
   };
+
+  // Ficha del personaje fijado: todas sus películas (también las que no están en el mapa), en el orden de la vista
+  const fichaPersonaje = useMemo(() => {
+    const c = personajeFijado
+      ? personajes.find((p) => p.id === personajeFijado)
+      : undefined;
+    if (!c) return null;
+    const porId = new Map(peliculas.map((p) => [p.id, p]));
+    const suyas = c.peliculas
+      .map((id) => porId.get(id))
+      .filter((p) => p !== undefined);
+    const crono = vista === "mcu-crono";
+    suyas.sort((a, b) =>
+      crono && a.cronologia && b.cronologia
+        ? a.cronologia.posicion - b.cronologia.posicion
+        : fechaNum(a) - fechaNum(b),
+    );
+    return { personaje: c, peliculas: suyas };
+  }, [personajeFijado, personajes, peliculas, vista]);
 
   const cambiarAmbito = (nuevo: Ambito) => {
     setAmbito(nuevo);
@@ -438,7 +483,7 @@ export function MapaRelaciones({
           <svg
             ref={svgRef}
             className="block size-full cursor-grab touch-none select-none active:cursor-grabbing"
-            onClick={(e) => e.target === svgRef.current && setFijado(null)}
+            onClick={(e) => e.target === svgRef.current && fijarPelicula(null)}
           >
             <defs>
               <clipPath id="recorte-poster">
@@ -548,6 +593,12 @@ export function MapaRelaciones({
                       stroke="transparent"
                       strokeWidth={12}
                       className="cursor-pointer"
+                      onClick={() => {
+                        setFijado(null);
+                        setPersonajeFijado((p) =>
+                          p === c.personaje.id ? null : c.personaje.id,
+                        );
+                      }}
                       onMouseEnter={(e) => {
                         setHover({ personaje: c.personaje.id });
                         mostrarTooltip(
@@ -588,9 +639,14 @@ export function MapaRelaciones({
                     )}
                     onPointerDown={(e) => alPulsar(e, n.id)}
                     onMouseEnter={() =>
-                      !fijado && !arrastre && setHover({ pelicula: n.id })
+                      !fijado &&
+                      !personajeFijado &&
+                      !arrastre &&
+                      setHover({ pelicula: n.id })
                     }
-                    onMouseLeave={() => !fijado && setHover(null)}
+                    onMouseLeave={() =>
+                      !fijado && !personajeFijado && setHover(null)
+                    }
                   >
                     {/* Surge al cargar y crece un poco al pasar el ratón */}
                     <g
@@ -689,7 +745,7 @@ export function MapaRelaciones({
 
           <p className="pointer-events-none absolute bottom-3 left-1/2 hidden -translate-x-1/2 rounded-full border bg-background/80 px-3 py-1 font-mono text-[11px] whitespace-nowrap text-muted-foreground backdrop-blur md:block">
             Arrastra las películas para moverlas · Rueda para zoom · Clic en una
-            película para ver sus conexiones
+            película o en una línea para ver sus detalles
           </p>
         </section>
 
@@ -704,6 +760,21 @@ export function MapaRelaciones({
             continuaEn={conexiones("destino")}
             onCerrar={() => setFijado(null)}
             onIr={centrarEn}
+            onPersonaje={(id) => {
+              setFijado(null);
+              setPersonajeFijado(id);
+            }}
+          />
+        )}
+
+        {fichaPersonaje && (
+          <PanelPersonaje
+            personaje={fichaPersonaje.personaje}
+            peliculas={fichaPersonaje.peliculas}
+            enMapa={new Set(layout.porId.keys())}
+            seleccionado={seleccion.has(fichaPersonaje.personaje.id)}
+            onCerrar={() => setPersonajeFijado(null)}
+            onIr={(id) => centrarEn(id, false)}
           />
         )}
       </div>

@@ -23,7 +23,10 @@ export type PeliculaMapa = Pick<
   "id" | "titulo" | "tituloOriginal" | "anio" | "fechaEstreno" | "proximamente" | "mcu" | "poster" | "directores" | "duracionMin" | "resumen" | "enlaces"
 > & { cronologia: { posicion: number; epoca: string | null } | null }; // solo las del MCU que están en la línea temporal
 
-export type PersonajeMapa = Pick<Personaje, "id" | "nombre" | "principal" | "peliculas"> & { color: string };
+export type PersonajeMapa = Pick<Personaje, "id" | "nombre" | "principal" | "peliculas"> & {
+  color: string;
+  interpretes: string[]; // actores que lo interpretan según el reparto (por número de películas)
+};
 
 export type Ambito = "mcu" | "todo";
 
@@ -31,11 +34,13 @@ export type Orden = "estreno" | "cronologico";
 
 // Qué vista se está mirando: las posiciones arrastradas a mano se guardan por vista
 export type Vista = "mcu" | "mcu-crono" | "todo";
-// Enlace al mapa con los filtros ya puestos (?ambito=mcu&orden=cronologico); lo lee MapaRelaciones al montar
-export function rutaMapa(filtros?: { ambito: Ambito; orden?: Orden }) {
+// Enlace al mapa con los filtros ya puestos (?ambito=mcu&orden=cronologico&personaje=thor); lo lee MapaRelaciones al montar.
+// Con `personaje` el mapa abre su ficha y resalta sus cables.
+export function rutaMapa(filtros?: { ambito: Ambito; orden?: Orden; personaje?: string }) {
   if (!filtros) return "/mapa";
   const q = new URLSearchParams({ ambito: filtros.ambito });
   if (filtros.ambito === "mcu" && filtros.orden) q.set("orden", filtros.orden);
+  if (filtros.personaje) q.set("personaje", filtros.personaje);
   return `/mapa?${q}`;
 }
 
