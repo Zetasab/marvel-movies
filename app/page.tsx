@@ -149,7 +149,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-6xl gap-5 px-4 pb-16 md:grid-cols-2">
+      <section className="mx-auto grid max-w-6xl gap-5 px-4 pb-16 md:grid-cols-2 lg:grid-cols-3">
         <Acceso
           href="/peliculas"
           etiqueta={
@@ -172,6 +172,17 @@ export default function Home() {
           }
           titulo="Mapa del multiverso"
           texto="Cada personaje es un cable que recorre sus películas. Sigue a Iron Man desde 2008 o mira qué historias desembocan en cada película de los Vengadores."
+        />
+        <Acceso
+          href="/personajes"
+          retraso={240}
+          etiqueta={
+            <>
+              <Contador valor={actualizacion.totalPersonajes} /> personajes
+            </>
+          }
+          titulo="Personajes"
+          texto="En qué películas sale cada uno y en qué orden verlas: Thor, Spider-Man, Lobezno, Viuda Negra… con quién lo interpreta y con quién coincide."
         />
       </section>
     </main>

@@ -136,8 +136,12 @@ export function PaginaListado({ listado }: { listado: Listado }) {
 
       <section className="mt-16">
         <h2 className="font-mono text-xs tracking-widest text-muted-foreground uppercase">Otras formas de verlas</h2>
-        <div className="mt-4 grid gap-4 sm:grid-cols-3">
-          {[...otros.map((l) => ({ href: l.ruta, texto: l.h1 })), { href: "/mapa", texto: "Mapa de conexiones entre películas" }].map((e, i) => (
+        <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            ...otros.map((l) => ({ href: l.ruta, texto: l.h1 })),
+            { href: "/mapa", texto: "Mapa de conexiones entre películas" },
+            { href: "/personajes", texto: "Las películas de cada personaje" },
+          ].map((e, i) => (
             <Revelar key={e.href} retraso={i * 90}>
               <Foco className="cristal-marcado h-full rounded-2xl transition-[translate,box-shadow] duration-300 ease-out hover:-translate-y-1">
                 <Link href={e.href} className="group flex h-full items-start justify-between gap-3 p-5 font-medium outline-none">

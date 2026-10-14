@@ -31,7 +31,7 @@ Es un proyecto personal sin ánimo de lucro: sin publicidad, sin cookies, sin an
 
 ### Inicio (`/`)
 
-Portada con las cifras del proyecto (películas, personajes, películas del MCU) y una animación de "cables". Muestra cómo Iron Man, Thor, Capitán América y Hulk desembocan en *Los Vengadores*. Desde aquí se llega a los listados y al mapa.
+Portada con las cifras del proyecto (películas, personajes, películas del MCU) y una animación de "cables". Muestra cómo Iron Man, Thor, Capitán América y Hulk desembocan en *Los Vengadores*. Desde aquí se llega a los listados, al mapa y a los personajes.
 
 ### Películas (`/peliculas`)
 
@@ -62,8 +62,22 @@ Un mapa interactivo con las películas colocadas en el tiempo (eje horizontal) y
 - **Zoom y desplazamiento** con la rueda y arrastrando. **"Ver todo"** encuadra el mapa entero.
 - **Arrastrar películas** para recolocarlas. **"Reorganizar"** las devuelve a su sitio. Cada vista (MCU por estreno, MCU cronológico, Todo Marvel) guarda sus posiciones por separado.
 - **Clic en una película.** Resalta sus conexiones y abre un panel que dice de qué películas viene y en cuáles continúa cada personaje.
+- **Clic en un cable** (o en un personaje del panel de una película). Abre la ficha del personaje a la derecha: quién lo interpreta, cifras y todas sus películas. Pulsar una lo centra en el mapa. Enlaza a su página completa.
 - Todo se recuerda en el navegador (`localStorage`) para la próxima visita.
-- **Filtros por URL**, que son los que usan los botones de los listados: `/mapa?ambito=mcu&orden=cronologico`, `/mapa?ambito=todo`…
+- **Filtros por URL**, que son los que usan los botones de los listados: `/mapa?ambito=mcu&orden=cronologico`, `/mapa?ambito=todo`… Con `&personaje=thor` abre además la ficha de ese personaje (lo usan las páginas de personaje).
+
+### Personajes (`/personajes`)
+
+Índice con los personajes principales en tarjetas y el resto en una lista alfabética. Cada uno tiene su página, `/personajes/<id>` (por ejemplo `/personajes/thor`), generada en el build:
+
+- **Introducción y cifras** sacadas de los datos: cuántas películas, cuántas del MCU, la primera, la última o la próxima.
+- **Quién lo interpreta**, ordenado por número de películas.
+- **Sus películas** por orden de estreno, con las mismas cards, buscador y ficha lateral que los listados.
+- **Personajes con los que más coincide**, enlazados a sus páginas.
+- **Preguntas frecuentes** (¿en cuántas películas sale?, ¿cuál es la primera?, ¿quién lo interpreta?, ¿en qué orden ver las del MCU?).
+- **Botón "¿Quiero verlas en mapa?"**, que abre el mapa con su ficha abierta.
+
+Wikidata guarda a veces versiones distintas del mismo personaje por separado (la Betty Brant de Raimi y la del MCU). Si dos personajes se llaman igual, el título lleva los años para distinguirlos: *Betty Brant (2002–2007)*. Si uno sale en más películas, ese conserva el nombre sin años.
 
 ### Además
 
@@ -129,6 +143,7 @@ marvel-movies/
 │   ├── page.tsx                  Inicio
 │   ├── peliculas/                Índice y los tres listados
 │   ├── mapa/                     Mapa del multiverso
+│   ├── personajes/               Índice de personajes y una página por personaje ([id])
 │   ├── aviso-legal/ privacidad/ cookies/
 │   ├── layout.tsx                Estructura común: barra, pie, tema, botón de contacto, metadatos
 │   ├── template.tsx              Animación de entrada en cada navegación
@@ -138,7 +153,7 @@ marvel-movies/
 │   └── globals.css               Tema (colores, cristal, brillos, animaciones)
 ├── components/
 │   ├── peliculas/                Cards, buscador, ficha lateral, botón al mapa, página de listado
-│   ├── mapa/                     Mapa, interruptores, panel de personajes y de detalle
+│   ├── mapa/                     Mapa, interruptores, panel de personajes, de detalle y ficha de personaje
 │   ├── inicio/                   Animación de la portada
 │   ├── legal/                    Plantilla de las páginas legales
 │   ├── ui/                       Componentes base (shadcn/ui)
@@ -147,6 +162,8 @@ marvel-movies/
 │   ├── datos.ts                  Lectura y tipos de los JSON de data/
 │   ├── listados.ts               Definición de los tres listados (rutas, títulos, textos SEO)
 │   ├── filas.ts                  Prepara las películas de cada listado para las cards
+│   ├── personajes.ts             Fichas de personaje: películas, intérpretes, con quién coincide, títulos
+│   ├── rutas.ts                  Rutas que usan también los componentes de cliente (sin cargar los datos)
 │   ├── mapa/layout.ts            Cálculo del mapa: posiciones, carriles, cables, colores, filtros por URL
 │   ├── formato.ts  imagenes.ts   Fechas, cifras y miniaturas de pósters
 │   ├── legal.ts                  Textos legales y lista de lo que se guarda en el navegador
@@ -168,7 +185,7 @@ Todo sale de cuatro JSON en `data/`. Se suben al repositorio porque la web los n
 | Archivo | Contenido | ¿Quién lo escribe? |
 |---|---|---|
 | `peliculas.json` | Las 110 películas: títulos, fechas, reparto con personajes, dirección, guion, géneros, estudios, presupuesto, recaudación, resumen, póster, IDs de Wikidata/IMDb/TMDB y enlaces. | El script |
-| `personajes.json` | Los 215 personajes y en qué películas sale cada uno (los cables del mapa). Los marcados como `principal` salen por defecto. | El script |
+| `personajes.json` | Los 215 personajes, en qué películas sale cada uno (los cables del mapa) y quién los interpreta (`interpretes`). Los marcados como `principal` salen por defecto. | El script |
 | `ultima-actualizacion.json` | Fecha de la última actualización correcta, duración y totales. La fecha se muestra en el pie. | El script |
 | `orden-cronologico.json` | El orden oficial en que transcurren las películas del MCU, con la época de cada una. | **A mano** (el script no lo toca) |
 
@@ -258,15 +275,17 @@ La web está pensada para salir en búsquedas como *"orden cronológico marvel"*
 | `/peliculas/marvel-orden-de-estreno` | todas las películas de marvel, cuántas películas de marvel hay, películas de marvel no mcu |
 | `/peliculas` | en qué orden ver las películas de marvel |
 | `/mapa` | conexiones entre películas de marvel |
+| `/personajes` | personajes de marvel, en qué películas sale cada personaje |
+| `/personajes/<id>` (215 páginas) | películas de thor en orden, en qué películas sale spider-man, quién interpreta a lobezno |
 
-- **Títulos y descripciones** que empiezan por la búsqueda y llevan el año (`Orden cronológico de Marvel (2026): las 39 películas del MCU`). El año y las cifras salen de los datos, así que se renuevan solos al actualizarlos. Están en `LISTADOS` de [`lib/listados.ts`](lib/listados.ts).
+- **Títulos y descripciones** que empiezan por la búsqueda (`Películas de Thor en orden: las 10 en las que aparece`) y, en los listados, llevan el año (`Orden cronológico de Marvel (2026): las 39 películas del MCU`). El año y las cifras salen de los datos, así que se renuevan solos al actualizarlos. Están en `LISTADOS` de [`lib/listados.ts`](lib/listados.ts).
 - **H1 e introducción** con las mismas palabras, escritas de forma natural.
 - **Todo el contenido está en el HTML** (web estática): Google ve las 110 películas sin ejecutar JavaScript.
-- **Datos estructurados (JSON-LD):** `WebSite` y `Person` en el inicio, `BreadcrumbList` en todas las páginas de contenido, y en cada listado `ItemList` de `Movie` y `FAQPage`.
-- **Preguntas frecuentes** al final de cada listado (¿cuál es la primera?, ¿cuántas hay?, ¿cuál es la última?…). Se generan a partir de los datos, así que la respuesta a "¿cuál es la última película de Marvel?" cambia sola con cada estreno.
+- **Datos estructurados (JSON-LD):** `WebSite` y `Person` en el inicio, `BreadcrumbList` en todas las páginas de contenido, en cada listado y cada personaje `ItemList` de `Movie` y `FAQPage`, y en el índice de personajes un `ItemList` con los principales.
+- **Preguntas frecuentes** al final de cada listado y de cada personaje (¿cuál es la primera?, ¿cuántas hay?, ¿cuál es la última?…). Se generan a partir de los datos, así que la respuesta a "¿cuál es la última película de Marvel?" cambia sola con cada estreno.
 - **Canonical** en cada página, **sitemap.xml** y **robots.txt**.
-- **Vista previa al compartir** en WhatsApp, Telegram, X, Facebook, LinkedIn o Discord. Cada página tiene su título, descripción, `og:url` e imagen de 1200×630: la foto de su sección con el título encima, generada en el build como JPG en `/og/*.jpg` (unos 60–100 KB, por debajo del límite de WhatsApp). Está en [`lib/og.tsx`](lib/og.tsx) y las fotos en `assets/og/`. Para ver cómo queda: [opengraph.xyz](https://www.opengraph.xyz).
-- **Enlaces internos** entre los tres listados, el mapa, el menú y el pie.
+- **Vista previa al compartir** en WhatsApp, Telegram, X, Facebook, LinkedIn o Discord. Cada página tiene su título, descripción, `og:url` e imagen de 1200×630: la foto de su sección con el título encima, generada en el build como JPG en `/og/*.jpg` (los personajes principales tienen la suya; el resto usa la de `/personajes`) (unos 60–100 KB, por debajo del límite de WhatsApp). Está en [`lib/og.tsx`](lib/og.tsx) y las fotos en `assets/og/`. Para ver cómo queda: [opengraph.xyz](https://www.opengraph.xyz).
+- **Enlaces internos** entre los tres listados, el mapa, los personajes, el menú, el pie y la portada. Cada personaje enlaza a aquellos con los que más coincide, para que ninguna página quede sin enlaces.
 
 ### Lo que tienes que hacer tú (una vez)
 
@@ -276,7 +295,7 @@ Google no encuentra solo una web nueva, y menos en `github.io`. Además, en GitH
 2. Elige el método de verificación **Etiqueta HTML**. Copia solo el valor de `content="…"`.
 3. En GitHub: **Settings → Secrets and variables → Actions → Variables → New repository variable**, con nombre `GOOGLE_SITE_VERIFICATION` y ese valor. Lanza de nuevo el workflow y, cuando termine, pulsa **Verificar** en Search Console.
 4. En Search Console, ve a **Sitemaps** y envía `https://zetasab.github.io/marvel-movies/sitemap.xml`.
-5. En **Inspección de URLs**, pega la URL de cada listado y pulsa **Solicitar indexación**.
+5. En **Inspección de URLs**, pega la URL de cada listado y de `/personajes/` y pulsa **Solicitar indexación**. Las fichas de cada personaje no hace falta pedirlas una a una: Google las encuentra por el sitemap y por los enlaces.
 
 Lo mismo se puede hacer en [Bing Webmaster Tools](https://www.bing.com/webmasters), que permite importar la propiedad directamente desde Search Console.
 
