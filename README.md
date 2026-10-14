@@ -1,4 +1,17 @@
-# Marvel Movies
+<h1 align="center">
+  <span style="color:#EC1D24">🎞️</span>
+  <span style="color:#FFFFFF"> Marvel</span><span style="color:#EC1D24">Movies</span>
+</h1>
+
+<p align="center">
+  Por si quieres ver — <a href="https://zetasab.github.io/marvel-movies/"><strong>Live Demo</strong></a>
+</p>
+
+<p align="center">
+  <img src="portada.gif" alt="Demo del proyecto" width="100%" />
+</p>
+
+---
 
 **Todas las películas de Marvel en un solo sitio: en qué orden verlas y cómo se conectan entre sí.**
 
