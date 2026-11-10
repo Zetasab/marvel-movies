@@ -138,6 +138,7 @@ Abre [http://localhost:3000](http://localhost:3000). La página se recarga sola 
 | `npm run lint` | Revisa el código con ESLint. |
 | `npm run datos` | Descarga los datos de nuevo, sin sobrescribir los JSON si ya existen (ver [Los datos](#los-datos)). |
 | `npm run datos:force` | Regenera los JSON desde cero (se pierden los cambios hechos a mano). |
+| `npm run datos:series` | Regenera solo `series.json`, sin tocar películas ni personajes. |
 
 Para probar el resultado final tal cual se publica:
 
@@ -193,18 +194,19 @@ marvel-movies/
 
 ## Los datos
 
-Todo sale de cuatro JSON en `data/`. Se suben al repositorio porque la web los necesita para compilar.
+Todo sale de cinco JSON en `data/`. Se suben al repositorio porque la web los necesita para compilar.
 
 | Archivo | Contenido | ¿Quién lo escribe? |
 |---|---|---|
 | `peliculas.json` | Las 110 películas: títulos, fechas, reparto con personajes, dirección, guion, géneros, estudios, presupuesto, recaudación, resumen, póster, IDs de Wikidata/IMDb/TMDB y enlaces. | El script |
 | `personajes.json` | Los 215 personajes, en qué películas sale cada uno (los cables del mapa) y quién los interpreta (`interpretes`). Los marcados como `principal` salen por defecto. | El script |
+| `series.json` | Las series de televisión de Marvel (imagen real y animación): emisión, temporadas, episodios, cadena, creadores, reparto, resumen, póster, si son del MCU y enlaces. No van en el HTML: los listados por orden de estreno las cargan al marcar «Incluir series» (desde `/datos/series.json`, que se genera en el build). | El script |
 | `ultima-actualizacion.json` | Fecha de la última actualización correcta, duración y totales. La fecha se muestra en el pie. | El script |
-| `orden-cronologico.json` | El orden oficial en que transcurren las películas del MCU, con la época de cada una. | **A mano** (el script no lo toca) |
+| `orden-cronologico.json` | El orden oficial en que transcurren las películas del MCU, con la época de cada una, y dónde se intercalan las series del MCU. | **A mano** (el script no lo toca) |
 
 ### Fuentes
 
-1. **Wikipedia (en)**: [List of films based on Marvel Comics publications](https://en.wikipedia.org/wiki/List_of_films_based_on_Marvel_Comics_publications) dice qué películas existen.
+1. **Wikipedia (en)**: [List of films based on Marvel Comics publications](https://en.wikipedia.org/wiki/List_of_films_based_on_Marvel_Comics_publications) dice qué películas existen y [List of television series based on Marvel Comics publications](https://en.wikipedia.org/wiki/List_of_television_series_based_on_Marvel_Comics_publications), qué series (solo las tablas principales: sin especiales, pilotos, webseries ni cortos).
 2. **Wikidata**: fechas, reparto, personajes, directores, guionistas, géneros, estudios, presupuesto, recaudación e identificadores.
 3. **Wikipedia (es/en)**: resumen y póster.
 4. **TMDB** (opcional): sinopsis en español, pósters, nota y tráiler, si se define la variable `TMDB_API_KEY`.
@@ -216,6 +218,7 @@ El script `actualizar-datos.mjs` está en la carpeta `scripts/`, **al lado de es
 ```bash
 npm run datos           # no sobrescribe si los JSON ya existen
 npm run datos:force     # los regenera desde cero
+npm run datos:series    # solo las series (sin tocar películas ni personajes)
 ```
 
 En Windows también vale con doble clic en `scripts/actualizar-datos.bat`. Tarda entre 5 y 20 minutos, porque Wikidata limita las peticiones.
@@ -236,11 +239,11 @@ Después de actualizar, haz commit de `data/` y push: la web se vuelve a publica
 
 ### Editar a mano
 
-- **Orden cronológico.** `data/orden-cronologico.json` es una lista en orden. Cada película se identifica por su código de Wikidata (`ids.wikidata` en `peliculas.json`). El campo `titulo` solo sirve para leerlo, `epoca` es cuándo transcurre y `nota` es opcional. Para añadir o mover una película, edita la lista.
+- **Orden cronológico.** `data/orden-cronologico.json` es una lista en orden. Cada película se identifica por su código de Wikidata (`ids.wikidata` en `peliculas.json`). El campo `titulo` solo sirve para leerlo, `epoca` es cuándo transcurre y `nota` es opcional. Para añadir o mover una película, edita la lista. Las series del MCU van en la lista `series` del mismo archivo: cada una indica tras qué película va (`despuesDe`, su código de Wikidata, o `null` para ir la primera) y salen al marcar «Incluir series». No tienen número, así las películas conservan el suyo.
 - **Cameos que sobran en el mapa.** Quita la película de la lista `peliculas` del personaje en `personajes.json`.
 - **Títulos.** Vienen de Wikidata y mezclan los de España y Latinoamérica ("Vengadores: Endgame" frente a "Capitana Marvel"). Se pueden unificar a mano en `peliculas.json`.
 
-> Ojo: `npm run datos:force` regenera `peliculas.json` y `personajes.json`, así que se pierden los cambios hechos a mano en esos dos archivos. `orden-cronologico.json` no se toca.
+> Ojo: `npm run datos:force` regenera `peliculas.json`, `series.json` y `personajes.json`, así que se pierden los cambios hechos a mano en esos dos archivos. `orden-cronologico.json` no se toca.
 
 ---
 

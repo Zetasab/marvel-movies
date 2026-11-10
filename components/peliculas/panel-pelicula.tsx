@@ -5,9 +5,9 @@ import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
-import { Enlace, Etiqueta, type PeliculaFila } from "./fila-pelicula";
+import { Enlace, Etiquetas, type PeliculaFila } from "./fila-pelicula";
 
-// Panel lateral con la ficha de una película (se abre al pulsar una card del listado).
+// Panel lateral con la ficha de una película o serie (se abre al pulsar una card del listado).
 // `pelicula` se mantiene mientras se cierra para que la animación de salida no se quede en blanco.
 export function PanelPelicula({
   pelicula: p,
@@ -57,26 +57,39 @@ function Ficha({
 }) {
   const d = p.detalle;
   const cronologia = verCronologia ? p.cronologia : null;
-  const datos = [
-    ["Estreno", p.estreno],
-    ["Duración", p.duracionMin && `${p.duracionMin} min`],
-    ["Recaudación", p.recaudacion],
-    ["Presupuesto", d.presupuesto],
-    ["Transcurre en", cronologia?.epoca],
-  ].filter((x): x is [string, string] => Boolean(x[1]));
+  const s = p.serie;
+  const datos = (
+    s
+      ? [
+          ["Estreno", p.estreno],
+          ["Emisión", s.emision],
+          ["Temporadas", s.temporadas && String(s.temporadas)],
+          ["Episodios", s.episodios && String(s.episodios)],
+          ["Por episodio", p.duracionMin && `${p.duracionMin} min`],
+          ["Cadena", s.cadenas.join(", ")],
+          ["Transcurre en", cronologia?.epoca],
+        ]
+      : [
+          ["Estreno", p.estreno],
+          ["Duración", p.duracionMin && `${p.duracionMin} min`],
+          ["Recaudación", p.recaudacion],
+          ["Presupuesto", d.presupuesto],
+          ["Transcurre en", cronologia?.epoca],
+        ]
+  ).filter((x): x is [string, string] => Boolean(x[1]));
 
   return (
     <>
       {/* Cabecera fija: navegación entre películas y cerrar */}
       <div className="sticky top-0 z-10 flex items-center justify-between gap-2 border-b bg-background/70 px-3 py-2 backdrop-blur-xl">
         <div className="flex items-center gap-1">
-          <Button variant="ghost" size="icon-sm" onClick={onAnterior ?? undefined} disabled={!onAnterior} aria-label="Película anterior">
+          <Button variant="ghost" size="icon-sm" onClick={onAnterior ?? undefined} disabled={!onAnterior} aria-label={s ? "Anterior" : "Película anterior"}>
             <ChevronLeft />
           </Button>
-          <Button variant="ghost" size="icon-sm" onClick={onSiguiente ?? undefined} disabled={!onSiguiente} aria-label="Película siguiente">
+          <Button variant="ghost" size="icon-sm" onClick={onSiguiente ?? undefined} disabled={!onSiguiente} aria-label={s ? "Siguiente" : "Película siguiente"}>
             <ChevronRight />
           </Button>
-          {cronologia && (
+          {cronologia?.posicion != null && (
             <span className="ml-1 font-mono text-xs font-semibold text-neon tabular-nums">
               #{String(cronologia.posicion).padStart(2, "0")}
             </span>
@@ -104,10 +117,7 @@ function Ficha({
             <Drawer.Title className="font-display text-xl leading-tight font-semibold text-balance">{p.titulo}</Drawer.Title>
             {p.tituloOriginal !== p.titulo && <p className="mt-1 text-sm text-muted-foreground">{p.tituloOriginal}</p>}
             <div className="mt-3 flex flex-wrap gap-1.5">
-              {p.proximamente && <Etiqueta tono="plasma">Próximamente</Etiqueta>}
-              {p.mcu && <Etiqueta tono="neon">MCU</Etiqueta>}
-              {p.tipo === "animacion" && <Etiqueta>Animación</Etiqueta>}
-              {p.formato === "tv-dvd" && <Etiqueta>TV / DVD</Etiqueta>}
+              <Etiquetas p={p} />
             </div>
             {cronologia?.nota && <p className="mt-3 text-sm text-muted-foreground">{cronologia.nota}</p>}
           </div>
@@ -146,7 +156,7 @@ function Ficha({
         {(p.directores.length > 0 || d.guionistas.length > 0 || d.productoras.length > 0) && (
           <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 text-sm">
             {[
-              ["Dirección", p.directores],
+              [s ? "Creación" : "Dirección", p.directores],
               ["Guion", d.guionistas],
               ["Producción", d.productoras],
             ].map(

@@ -21,7 +21,12 @@ const PASO_CRONO = TARJETA_W + 70; // en orden cronológico no hay fechas: cada 
 export type PeliculaMapa = Pick<
   Pelicula,
   "id" | "titulo" | "tituloOriginal" | "anio" | "fechaEstreno" | "proximamente" | "mcu" | "poster" | "directores" | "duracionMin" | "resumen" | "enlaces"
-> & { cronologia: { posicion: number; epoca: string | null } | null }; // solo las del MCU que están en la línea temporal
+> & {
+  // Solo las del MCU que están en la línea temporal. Las series tienen posición decimal: van justo detrás de
+  // su película (p. ej. 23.001 = primera serie tras la película 23)
+  cronologia: { posicion: number; epoca: string | null } | null;
+  serie?: boolean; // con «Incluir series» el mapa también tiene series
+};
 
 export type PersonajeMapa = Pick<Personaje, "id" | "nombre" | "principal" | "peliculas"> & {
   color: string;
@@ -146,6 +151,11 @@ export function enAmbito(p: Pick<Pelicula, "mcu">, ambito: Ambito) {
   return ambito === "todo" || p.mcu;
 }
 
+// Qué entra en una vista: en orden cronológico, las series sin sitio en la línea temporal no salen
+function enVista(p: PeliculaMapa, ambito: Ambito, crono: boolean) {
+  return enAmbito(p, ambito) && !(crono && p.serie && !p.cronologia);
+}
+
 export function calcularLayout(
   peliculas: PeliculaMapa[],
   personajes: PersonajeMapa[],
@@ -166,7 +176,7 @@ export function calcularLayout(
     if (!seleccion.has(c.id)) continue;
     const pelis = c.peliculas
       .map((id) => porIdTodas.get(id))
-      .filter((p): p is PeliculaMapa => !!p && enAmbito(p, ambito))
+      .filter((p): p is PeliculaMapa => !!p && enVista(p, ambito, crono))
       .sort((a, b) => clave(a) - clave(b));
     pelis.forEach((p) => conPersonaje.add(p.id));
     for (let i = 1; i < pelis.length; i++) {
@@ -176,7 +186,7 @@ export function calcularLayout(
 
   // En el MCU se muestran todas; en "Todo Marvel" solo las que tienen algún personaje seleccionado
   const visibles = peliculas
-    .filter((p) => enAmbito(p, ambito) && (ambito === "mcu" || conPersonaje.has(p.id)))
+    .filter((p) => enVista(p, ambito, crono) && (ambito === "mcu" || conPersonaje.has(p.id)))
     .sort((a, b) => clave(a) - clave(b));
 
   const usados = new Set(visibles.map(franquiciaDe));

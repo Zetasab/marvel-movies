@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import { Foco } from "@/components/foco";
 import { Revelar } from "@/components/revelar";
-import { getUltimaActualizacion } from "@/lib/datos";
+import { getCronologiaSeries, getSeries, getUltimaActualizacion } from "@/lib/datos";
 import { getPeliculasListado, type PeliculaListado } from "@/lib/filas";
 import { LISTADOS, type Listado } from "@/lib/listados";
 import { rutaMapa } from "@/lib/mapa/layout";
@@ -109,7 +109,7 @@ export function PaginaListado({ listado }: { listado: Listado }) {
         <BotonMapa href={rutaMapa({ ambito: listado.soloMcu ? "mcu" : "todo", orden: listado.modo })} />
       </div>
 
-      <ListaPeliculas peliculas={peliculas.map((p) => p.fila)} modo={listado.modo} />
+      <ListaPeliculas peliculas={peliculas.map((p) => p.fila)} modo={listado.modo} series={{ soloMcu: listado.soloMcu }} />
 
       <section className="mt-16 grid gap-10">
         {faq.map(({ pregunta, respuesta }, i) => (
@@ -234,6 +234,7 @@ function preguntas(listado: Listado, peliculas: PeliculaListado[]): Pregunta[] {
           ".",
         ],
       },
+      ...preguntaSeriesCronologia(),
       ...ultima,
     ];
   }
@@ -251,6 +252,7 @@ function preguntas(listado: Listado, peliculas: PeliculaListado[]): Pregunta[] {
           `Las primeras fueron ${enumerar(filas.slice(0, 5).map((p) => `${p.titulo} (${p.anio})`))}. La lista de arriba sigue el orden de estreno completo, fecha a fecha.`,
         ],
       },
+      ...preguntaSeries(true),
       {
         pregunta: "¿Cuántas películas tiene el MCU?",
         respuesta: [
@@ -274,6 +276,7 @@ function preguntas(listado: Listado, peliculas: PeliculaListado[]): Pregunta[] {
         `${peliculas.length} películas basadas en Marvel Comics: ${mcu} del Universo Cinematográfico de Marvel y ${peliculas.length - mcu} de otros estudios, de animación o hechas para televisión.`,
       ],
     },
+    ...preguntaSeries(false),
     {
       pregunta: "¿Cuál es la película de Marvel más antigua?",
       respuesta: [`${primera.titulo}, de ${primera.anio}: es la primera de esta lista.`],
@@ -287,5 +290,50 @@ function preguntas(listado: Listado, peliculas: PeliculaListado[]): Pregunta[] {
       ],
     },
     ...ultima,
+  ];
+}
+
+// Las series no están en el HTML de la lista (se cargan al marcar «Incluir series»), pero sí esta respuesta,
+// para que la página también responda a búsquedas sobre series de Marvel
+function preguntaSeries(soloMcu: boolean): Pregunta[] {
+  const series = getSeries().filter((s) => (!soloMcu || s.mcu) && !s.proximamente && s.anio);
+  if (!series.length) return [];
+  const primera = series[0];
+  const ultima = series.at(-1)!;
+  const animadas = series.filter((s) => s.tipo === "animacion").length;
+  if (soloMcu) {
+    return [
+      {
+        pregunta: "¿Qué series tiene el MCU?",
+        respuesta: [
+          `Hay ${series.length} series del Universo Cinematográfico de Marvel ya estrenadas, de ${primera.titulo} (${primera.anio}) a ${ultima.titulo} (${ultima.anio}). Marca «Incluir series» encima de la lista para verlas intercaladas con las películas por orden de estreno.`,
+        ],
+      },
+    ];
+  }
+  const mcu = series.filter((s) => s.mcu).length;
+  return [
+    {
+      pregunta: "¿Cuántas series de Marvel hay?",
+      respuesta: [
+        `${series.length} series de televisión basadas en Marvel Comics ya estrenadas: ${series.length - animadas} de imagen real y ${animadas} de animación, ${mcu} de ellas del MCU. La primera fue ${primera.titulo} (${primera.anio}). Marca «Incluir series» encima de la lista para verlas junto a las películas por orden de estreno.`,
+      ],
+    },
+  ];
+}
+
+function preguntaSeriesCronologia(): Pregunta[] {
+  const cronologia = getCronologiaSeries();
+  const series = getSeries().filter((s) => cronologia.has(s.id) && !s.proximamente);
+  if (!series.length) return [];
+  const conEpoca = series.filter((s) => cronologia.get(s.id)!.epoca && /\d/.test(cronologia.get(s.id)!.epoca!));
+  const ejemplos = conEpoca.slice(0, 3).map((s) => `${s.titulo} (${cronologia.get(s.id)!.epoca})`);
+  return [
+    {
+      pregunta: "¿Dónde van las series de Marvel en el orden cronológico?",
+      respuesta: [
+        `Marca «Incluir series» encima de la lista y las ${series.length} series del MCU se intercalan entre las películas según cuándo transcurren, por ejemplo ${enumerar(ejemplos)}. Las películas conservan su número en la línea temporal.`,
+      ],
+    },
   ];
 }

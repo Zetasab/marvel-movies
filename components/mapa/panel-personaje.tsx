@@ -31,7 +31,8 @@ export function PanelPersonaje({
   const estrenadas = peliculas.filter((p) => !p.proximamente);
   const porAnio = [...estrenadas].sort((a, b) => a.anio - b.anio);
   const datos = [
-    ["Películas", String(peliculas.length)],
+    ["Películas", String(peliculas.filter((p) => !p.serie).length)],
+    ["Series", peliculas.some((p) => p.serie) ? String(peliculas.filter((p) => p.serie).length) : null],
     ["En el mapa", String(peliculas.filter((p) => enMapa.has(p.id)).length)],
     ["Primera", porAnio[0] && String(porAnio[0].anio)],
     ["Última", porAnio.at(-1) && String(porAnio.at(-1)!.anio)],

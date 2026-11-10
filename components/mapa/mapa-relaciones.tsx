@@ -19,6 +19,8 @@ import {
 } from "react";
 
 import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
+import { ponerSeriesVisibles, useSeriesVisibles } from "@/lib/preferencias";
 import {
   CARRIL_H,
   CLAVES_MAPA,
@@ -77,14 +79,32 @@ function guardar(clave: string, valor: unknown) {
 }
 
 export function MapaRelaciones({
-  peliculas,
-  personajes,
+  peliculas: soloPeliculas,
+  personajes: personajesPeliculas,
+  series,
+  seriesDePersonaje,
   ultimaActualizacion,
 }: {
   peliculas: PeliculaMapa[];
   personajes: PersonajeMapa[];
+  series: PeliculaMapa[];
+  seriesDePersonaje: Record<string, string[]>; // id de personaje -> ids de sus series
   ultimaActualizacion: string | null;
 }) {
+  // «Incluir series» (la misma preferencia que en los listados): las series se tratan como una película más
+  // y los cables de cada personaje pasan también por sus series
+  const verSeries = useSeriesVisibles();
+  const peliculas = useMemo(() => (verSeries ? [...soloPeliculas, ...series] : soloPeliculas), [verSeries, soloPeliculas, series]);
+  const personajes = useMemo(
+    () =>
+      verSeries
+        ? personajesPeliculas.map((c) =>
+            seriesDePersonaje[c.id] ? { ...c, peliculas: [...c.peliculas, ...seriesDePersonaje[c.id]] } : c,
+          )
+        : personajesPeliculas,
+    [verSeries, personajesPeliculas, seriesDePersonaje],
+  );
+
   const principales = useMemo(
     () => new Set(personajes.filter((c) => c.principal).map((c) => c.id)),
     [personajes],
@@ -398,6 +418,12 @@ export function MapaRelaciones({
     requestAnimationFrame(() => encuadrar());
   };
 
+  const cambiarSeries = (ver: boolean) => {
+    ponerSeriesVisibles(ver);
+    if (!ver && fijado && series.some((s) => s.id === fijado)) setFijado(null);
+    requestAnimationFrame(() => encuadrar());
+  };
+
   const reorganizar = () => {
     setPosiciones((p) =>
       Object.fromEntries(
@@ -444,6 +470,10 @@ export function MapaRelaciones({
               className="animate-in duration-300 fade-in slide-in-from-left-2 zoom-in-95"
             />
           )}
+          <label className="flex h-7 cursor-pointer items-center gap-2 rounded-lg border px-2.5 text-[0.8rem] whitespace-nowrap select-none transition-colors hover:bg-muted/60">
+            <Checkbox checked={verSeries} onCheckedChange={cambiarSeries} />
+            Incluir series
+          </label>
           <Button
             variant="outline"
             size="sm"
@@ -706,6 +736,7 @@ export function MapaRelaciones({
                       className="fill-muted-foreground font-mono text-[11px]"
                     >
                       {n.anio}
+                      {n.serie && <tspan className="fill-plasma font-semibold tracking-wider"> · SERIE</tspan>}
                     </text>
                     {n.proximamente && (
                       <text

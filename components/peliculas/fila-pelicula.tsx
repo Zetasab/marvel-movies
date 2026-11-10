@@ -4,24 +4,35 @@ import { moverFoco } from "@/components/foco";
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
+// Una fila del listado: una película o, si se marca «Incluir series», una serie
 export type PeliculaFila = {
   id: string;
   titulo: string;
   tituloOriginal: string;
-  anio: number;
+  anio: number | null; // solo las series anunciadas sin fecha no tienen año
   estreno: string; // ya formateada, p. ej. "2 de mayo de 2008"
+  orden: string; // para mezclar películas y series por fecha: "AAAA-MM-DD", "AAAA-MM" o "AAAA"
   proximamente: boolean;
   mcu: boolean;
   tipo: "imagen-real" | "animacion";
-  formato: "cine" | "tv-dvd";
+  formato: "cine" | "tv-dvd" | "serie";
   poster: string | null;
-  directores: string[];
+  directores: string[]; // en las series, quién la creó
   reparto: string[]; // primeros actores
   duracionMin: number | null;
   recaudacion: string | null; // ya formateada, p. ej. "585 M$"
   resumen: string | null;
   enlaces: { wikipedia: string | null; imdb: string | null };
-  cronologia: { posicion: number; epoca: string | null; nota: string | null } | null; // solo películas del MCU
+  // Lugar en la línea temporal del MCU. Las películas tienen número (posicion); las series no: van detrás
+  // de la película `despuesDe` (id de película; null = antes de la primera), por `indice` (su orden en el JSON)
+  cronologia: { posicion: number | null; epoca: string | null; nota: string | null; despuesDe?: string | null; indice?: number } | null;
+  serie: {
+    emision: string; // ya formateada, p. ej. "2015–2018" o "2021–actualidad"
+    enEmision: boolean;
+    temporadas: number | null;
+    episodios: number | null;
+    cadenas: string[];
+  } | null; // null en las películas
   // Lo que solo se ve en el panel lateral al pulsar la card
   detalle: {
     guionistas: string[];
@@ -43,7 +54,9 @@ export function FilaPelicula({
   prioritaria?: boolean; // las primeras de la lista se ven al cargar: su póster no se retrasa (cuenta para el LCP)
   onAbrir: () => void;
 }) {
-  const meta = [p.estreno, p.duracionMin && `${p.duracionMin} min`, p.recaudacion && `Recaudó ${p.recaudacion}`].filter(Boolean);
+  const meta = p.serie
+    ? [p.serie.emision, temporadasEpisodios(p.serie), p.serie.cadenas.slice(0, 2).join(" / ")].filter(Boolean)
+    : [p.estreno, p.duracionMin && `${p.duracionMin} min`, p.recaudacion && `Recaudó ${p.recaudacion}`].filter(Boolean);
   const cronologia = verCronologia ? p.cronologia : null;
 
   return (
@@ -71,7 +84,7 @@ export function FilaPelicula({
         )}
         {/* Brillo sutil en el borde interior para que el póster no se funda con el fondo */}
         <div className="pointer-events-none absolute inset-0 rounded-[inherit] ring-1 ring-white/10 ring-inset" aria-hidden />
-        {cronologia && (
+        {cronologia?.posicion != null && (
           // Posición en la línea temporal del MCU
           <span className="absolute top-2 left-2 rounded-md bg-background/85 px-1.5 py-0.5 font-mono text-xs font-semibold text-neon tabular-nums backdrop-blur transition-[scale,box-shadow] duration-300 group-hover/fila:scale-110 group-hover/fila:shadow-[0_0_14px_-2px_var(--neon)]">
             #{String(cronologia.posicion).padStart(2, "0")}
@@ -96,10 +109,7 @@ export function FilaPelicula({
             {p.tituloOriginal !== p.titulo && <p className="mt-0.5 text-sm text-muted-foreground">{p.tituloOriginal}</p>}
           </div>
           <div className="flex flex-wrap gap-1.5">
-            {p.proximamente && <Etiqueta tono="plasma">Próximamente</Etiqueta>}
-            {p.mcu && <Etiqueta tono="neon">MCU</Etiqueta>}
-            {p.tipo === "animacion" && <Etiqueta>Animación</Etiqueta>}
-            {p.formato === "tv-dvd" && <Etiqueta>TV / DVD</Etiqueta>}
+            <Etiquetas p={p} />
           </div>
         </div>
 
@@ -120,7 +130,9 @@ export function FilaPelicula({
           <dl className="grid gap-x-4 gap-y-1 text-sm sm:grid-cols-[auto_1fr]">
             {p.directores.length > 0 && (
               <>
-                <dt className="font-mono text-[11px] leading-5 tracking-wider text-muted-foreground uppercase">Dirección</dt>
+                <dt className="font-mono text-[11px] leading-5 tracking-wider text-muted-foreground uppercase">
+                  {p.serie ? "Creación" : "Dirección"}
+                </dt>
                 <dd>{p.directores.join(", ")}</dd>
               </>
             )}
@@ -143,6 +155,28 @@ export function FilaPelicula({
         )}
       </div>
     </Card>
+  );
+}
+
+// "3 temporadas · 39 episodios"
+export function temporadasEpisodios(s: NonNullable<PeliculaFila["serie"]>) {
+  const partes = [
+    s.temporadas && `${s.temporadas} ${s.temporadas === 1 ? "temporada" : "temporadas"}`,
+    s.episodios && `${s.episodios} ${s.episodios === 1 ? "episodio" : "episodios"}`,
+  ].filter(Boolean);
+  return partes.join(" · ");
+}
+
+export function Etiquetas({ p }: { p: PeliculaFila }) {
+  return (
+    <>
+      {p.serie && <Etiqueta tono="plasma">Serie</Etiqueta>}
+      {p.proximamente && <Etiqueta tono="plasma">Próximamente</Etiqueta>}
+      {p.serie?.enEmision && !p.proximamente && <Etiqueta>En emisión</Etiqueta>}
+      {p.mcu && <Etiqueta tono="neon">MCU</Etiqueta>}
+      {p.tipo === "animacion" && <Etiqueta>Animación</Etiqueta>}
+      {p.formato === "tv-dvd" && <Etiqueta>TV / DVD</Etiqueta>}
+    </>
   );
 }
 

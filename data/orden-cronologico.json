@@ -1,5 +1,5 @@
 {
-  "descripcion": "Orden cronológico (en el que transcurren los hechos) de las películas del MCU, según el orden oficial de Marvel / Disney+. Se edita a mano: el script de actualización no toca este archivo. Las películas se identifican por su código de Wikidata (ids.wikidata en peliculas.json) para que no dependa de títulos ni ids. 'titulo' solo sirve para leerlo; 'epoca' es cuándo transcurre; 'nota' es opcional.",
+  "descripcion": "Orden cronológico (en el que transcurren los hechos) de las películas del MCU, según el orden oficial de Marvel / Disney+. Se edita a mano: el script de actualización no toca este archivo. Las películas se identifican por su código de Wikidata (ids.wikidata en peliculas.json) para que no dependa de títulos ni ids. 'titulo' solo sirve para leerlo; 'epoca' es cuándo transcurre; 'nota' es opcional. 'series' son las series del MCU que se intercalan al marcar «Incluir series»: cada una va detrás de la película 'despuesDe' (código de Wikidata; null = antes de la primera) y, si varias van detrás de la misma, en el orden de esta lista. Las películas conservan su número. Las series del MCU que no estén aquí (Inhumans, Runaways, Cloak & Dagger, fuera del orden oficial) no salen en el orden cronológico.",
   "peliculas": [
     { "wikidata": "Q275120", "titulo": "Captain America: The First Avenger", "epoca": "1943–1945" },
     { "wikidata": "Q23781129", "titulo": "Captain Marvel", "epoca": "1995" },
@@ -40,5 +40,33 @@
     { "wikidata": "Q105105219", "titulo": "The Fantastic Four: First Steps", "epoca": "Tierra-828", "nota": "Transcurre en otro universo (Tierra-828), fuera de la línea temporal principal" },
     { "wikidata": "Q113244935", "titulo": "Spider-Man: Brand New Day", "epoca": null, "nota": "Posición provisional hasta que se estrene" },
     { "wikidata": "Q113244839", "titulo": "Avengers: Doomsday", "epoca": null, "nota": "Posición provisional hasta que se estrene" }
+  ],
+  "series": [
+    { "wikidata": "Q123953931", "titulo": "Eyes of Wakanda", "despuesDe": null, "epoca": "1260 a. C.–1896", "nota": "Historias de los guerreros de Wakanda a lo largo de los siglos" },
+    { "wikidata": "Q16860023", "titulo": "Agent Carter", "despuesDe": "Q275120", "epoca": "1946–1947" },
+    { "wikidata": "Q537911", "titulo": "Agents of S.H.I.E.L.D.", "despuesDe": "Q1201853", "epoca": "2013–2019", "nota": "Sus temporadas avanzan en paralelo a las películas, hasta después de Infinity War" },
+    { "wikidata": "Q16977365", "titulo": "Daredevil", "despuesDe": "Q5901134", "epoca": null, "nota": "Las series de Netflix transcurren en paralelo a las películas de 2015 a 2018" },
+    { "wikidata": "Q18605540", "titulo": "Jessica Jones", "despuesDe": "Q5901134", "epoca": null, "nota": "Las series de Netflix transcurren en paralelo a las películas de 2015 a 2018" },
+    { "wikidata": "Q20646602", "titulo": "Luke Cage", "despuesDe": "Q5901134", "epoca": null, "nota": "Las series de Netflix transcurren en paralelo a las películas de 2015 a 2018" },
+    { "wikidata": "Q21148896", "titulo": "Iron Fist", "despuesDe": "Q5901134", "epoca": null, "nota": "Las series de Netflix transcurren en paralelo a las películas de 2015 a 2018" },
+    { "wikidata": "Q22988401", "titulo": "The Defenders", "despuesDe": "Q5901134", "epoca": null, "nota": "Las series de Netflix transcurren en paralelo a las películas de 2015 a 2018" },
+    { "wikidata": "Q27089570", "titulo": "The Punisher", "despuesDe": "Q5901134", "epoca": null, "nota": "Las series de Netflix transcurren en paralelo a las películas de 2015 a 2018" },
+    { "wikidata": "Q64349029", "titulo": "Loki", "despuesDe": "Q23781155", "epoca": "Fuera del tiempo", "nota": "El Loki de 2012 escapa durante el viaje en el tiempo de Endgame" },
+    { "wikidata": "Q65980671", "titulo": "What If...?", "despuesDe": "Q23781155", "epoca": "Multiverso" },
+    { "wikidata": "Q111382701", "titulo": "Marvel Zombies", "despuesDe": "Q23781155", "epoca": "Multiverso", "nota": "Continúa un episodio de What If...?" },
+    { "wikidata": "Q113005299", "titulo": "Your Friendly Neighborhood Spider-Man", "despuesDe": "Q23781155", "epoca": "Otro universo", "nota": "Un Peter Parker de una realidad alternativa" },
+    { "wikidata": "Q65980217", "titulo": "WandaVision", "despuesDe": "Q23781155", "epoca": "2023" },
+    { "wikidata": "Q65979734", "titulo": "The Falcon and the Winter Soldier", "despuesDe": "Q23781155", "epoca": "2024" },
+    { "wikidata": "Q65980843", "titulo": "Hawkeye", "despuesDe": "Q64211112", "epoca": "2024" },
+    { "wikidata": "Q84712802", "titulo": "Moon Knight", "despuesDe": "Q64211112", "epoca": "2025" },
+    { "wikidata": "Q111676994", "titulo": "Echo", "despuesDe": "Q54860489", "epoca": "2025" },
+    { "wikidata": "Q84712806", "titulo": "She-Hulk: Attorney at Law", "despuesDe": "Q54860489", "epoca": "2025" },
+    { "wikidata": "Q84712813", "titulo": "Ms. Marvel", "despuesDe": "Q54860489", "epoca": "2025" },
+    { "wikidata": "Q108124282", "titulo": "Ironheart", "despuesDe": "Q54860489", "epoca": "2025" },
+    { "wikidata": "Q108441863", "titulo": "Secret Invasion", "despuesDe": "Q29226331", "epoca": "2026" },
+    { "wikidata": "Q108837156", "titulo": "Agatha All Along", "despuesDe": "Q102180106", "epoca": "2026" },
+    { "wikidata": "Q113244844", "titulo": "Daredevil: Born Again", "despuesDe": "Q102180106", "epoca": "2026–2027" },
+    { "wikidata": "Q114779504", "titulo": "Wonder Man", "despuesDe": "Q112322474", "epoca": null, "nota": "Posición aproximada" },
+    { "wikidata": "Q126092795", "titulo": "VisionQuest", "despuesDe": "Q112322474", "epoca": null, "nota": "Posición aproximada" }
   ]
 }

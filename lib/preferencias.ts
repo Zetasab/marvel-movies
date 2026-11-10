@@ -42,7 +42,7 @@ export function ponerTemaOscuro(oscuro: boolean) {
 
 // ---------- imágenes de fondo ----------
 
-function suscribirFondo(avisar: () => void) {
+function suscribirAlmacen(avisar: () => void) {
   window.addEventListener(EVENTO, avisar);
   window.addEventListener("storage", avisar); // cambios hechos en otra pestaña
   return () => {
@@ -61,10 +61,32 @@ function leerFondo() {
 
 // En el servidor `false`: el HTML estático no lleva las imágenes, así no se descargan si el visitante las desactivó
 export function useFondoActivado() {
-  return useSyncExternalStore(suscribirFondo, leerFondo, () => false);
+  return useSyncExternalStore(suscribirAlmacen, leerFondo, () => false);
 }
 
 export function ponerFondoActivado(activado: boolean) {
   guardar(CLAVE_FONDO, activado ? "si" : "no");
+  window.dispatchEvent(new Event(EVENTO));
+}
+
+// ---------- series en los listados de películas ----------
+// Desmarcado por defecto (y siempre en el servidor): el HTML que indexa Google es solo de películas
+
+const CLAVE_SERIES = "series";
+
+function leerSeries() {
+  try {
+    return localStorage.getItem(CLAVE_SERIES) === "si";
+  } catch {
+    return false;
+  }
+}
+
+export function useSeriesVisibles() {
+  return useSyncExternalStore(suscribirAlmacen, leerSeries, () => false);
+}
+
+export function ponerSeriesVisibles(visibles: boolean) {
+  guardar(CLAVE_SERIES, visibles ? "si" : "no");
   window.dispatchEvent(new Event(EVENTO));
 }

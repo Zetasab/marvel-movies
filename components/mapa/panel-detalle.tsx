@@ -50,6 +50,11 @@ export function PanelDetalle({
                     MCU
                   </Badge>
                 )}
+                {p.serie && (
+                  <Badge variant="outline" className="border-plasma/50 font-mono text-[10px] tracking-wider text-plasma uppercase">
+                    Serie
+                  </Badge>
+                )}
                 {p.proximamente && (
                   <Badge variant="outline" className="border-plasma/50 font-mono text-[10px] tracking-wider text-plasma uppercase">
                     Próximamente
